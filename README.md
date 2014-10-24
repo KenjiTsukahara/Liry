@@ -19,3 +19,6 @@ Liry.me
 * email test@gmail.com
 * password 000000
 
+##other
+Liry does not support Smartphones and Tablets.
+
