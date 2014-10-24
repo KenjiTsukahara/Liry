@@ -16,6 +16,6 @@ Liry.me
 
 
 ##Test user account
-* email:test@gmail.com
-* password:000000
+* email test@gmail.com
+* password 000000
 
