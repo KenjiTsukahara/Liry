@@ -1,0 +1,150 @@
+/* -moz-border-radius */
+#input_submit { -moz-border-radius:6px }
+
+/* -webkit-border-radius */
+#input_submit { -webkit-border-radius:6px }
+
+/* background-color */
+#input_submit { background-color:#2C3E50 }
+#input_submit:hover { background-color:#34495E }
+#prev_wrapper { background-color:red }
+
+/* background-image */
+#input_submit { background-image:-moz-linear-gradient(top, #2C3E50, #2C3E50) }
+#input_submit { background-image:-ms-linear-gradient(top, #2C3E50, #2C3E50) }
+#input_submit { background-image:-o-linear-gradient(top, #2C3E50, #2C3E50) }
+#input_submit { background-image:-webkit-gradient(linear, left top, left bottom, from(#2C3E50), to(#2C3E50)) }
+#input_submit { background-image:-webkit-linear-gradient(top, #2C3E50, #2C3E50) }
+#input_submit { background-image:linear-gradient(to bottom, #2C3E50, #2C3E50) }
+#input_submit:hover { background-image:-moz-linear-gradient(top, #34495E, #34495E) }
+#input_submit:hover { background-image:-ms-linear-gradient(top, #34495E, #34495E) }
+#input_submit:hover { background-image:-o-linear-gradient(top, #34495E, #34495E) }
+#input_submit:hover { background-image:-webkit-gradient(linear, left top, left bottom, from(#34495E), to(#34495E)) }
+#input_submit:hover { background-image:-webkit-linear-gradient(top, #34495E, #34495E) }
+#input_submit:hover { background-image:linear-gradient(to bottom, #34495E, #34495E) }
+
+/* border */
+#input_about { border:none }
+#input_submit { border:0px solid #18222c }
+#input_submit:hover { border:0px solid #080b0e }
+
+/* border-radius */
+#input_submit { border-radius:6px }
+
+/* color */
+#input_submit { color:#FFFFFF }
+#title_edit { color:#7C858E }
+
+/* display */
+#input_img { display:inline }
+#input_submit { display:inline-block }
+#left_wrapper { display:table-cell }
+#prev_img { display:inline }
+#right_wrapper { display:table-cell }
+
+/* filter */
+#input_submit { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#2C3E50, endColorstr=#2C3E50) }
+#input_submit:hover { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#34495E, endColorstr=#34495E) }
+
+/* float */
+#input_submit { float:right }
+#prev_img_wrapper { float:left }
+
+/* font-family */
+#input_submit { font-family:arial, helvetica, sans-serif }
+#title_edit { font-family:Lily Script One, cursive }
+.title { font-family:Roboto, sans-serif }
+
+/* font-size */
+#input_about { font-size:110% }
+#input_name { font-size:110% }
+#input_submit { font-size:14px }
+#title_edit { font-size:180% }
+.title { font-size:120% }
+
+/* font-weight */
+#input_submit { font-weight:bold }
+
+/* height */
+#about_wrapper { height:200px }
+#edit_form { height:100% }
+#edit_wrapper { height:100% }
+#input_about { height:200px }
+#input_file { height:50px }
+#input_name { height:30px }
+#left_wrapper { height:100% }
+#name_wrapper { height:40px }
+#prev_img_wrapper { height:52px }
+#prev_wrapper { height:300px }
+#right_wrapper { height:100% }
+#submit_wrapper { height:60px }
+#title_wrapper { height:20px }
+#upload_file_span { height:300px }
+#upload_file_span img { height:230px }
+
+/* margin */
+#edit_form { margin:0 auto }
+
+/* margin-bottom */
+#file_wrapper { margin-bottom:10px }
+#img { margin-bottom:10px }
+
+/* margin-left */
+#input_img { margin-left:10px }
+
+/* margin-right */
+#input_submit { margin-right:20px }
+
+/* margin-top */
+#edit_wrapper { margin-top:100px }
+#input_img { margin-top:30px }
+#input_submit { margin-top:10px }
+
+/* padding */
+#input_submit { padding:10px 10px 10px 10px }
+
+/* position */
+#container { position:absolute }
+#input_file { position:relative }
+#left_wrapper { position:relative }
+#title_wrapper { position:relative }
+#upload_file_span img { position:relative }
+
+/* resize */
+#input_about { resize:none }
+
+/* right */
+#upload_file_span img { right:52px }
+
+/* text-align */
+#title_wrapper { text-align:center }
+
+/* text-decoration */
+#input_submit { text-decoration:none }
+
+/* text-shadow */
+#input_submit { text-shadow:0px 0px 0 rgba(0,0,0,0.3) }
+
+/* top */
+#container { top:70px }
+#title_wrapper { top:50px }
+#upload_file_span img { top:20px }
+
+/* width */
+#about_wrapper { width:320px }
+#edit_form { width:620px }
+#edit_wrapper { width:100% }
+#file_wrapper { width:300px }
+#input_about { width:300px }
+#input_file { width:300px }
+#input_img { width:95px }
+#input_name { width:300px }
+#left_wrapper { width:300px }
+#name_wrapper { width:320px }
+#prev_img_wrapper { width:52px }
+#prev_wrapper { width:300px }
+#right_wrapper { width:320px }
+#submit_wrapper { width:320px }
+#title_wrapper { width:100% }
+#upload_file_span { width:300px }
+#upload_file_span img { width:230px }

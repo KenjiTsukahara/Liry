@@ -1,0 +1,209 @@
+/* -moz-border-radius */
+#tiles li { -moz-border-radius:2px }
+.buy-btn { -moz-border-radius:8px }
+
+/* -moz-box-shadow */
+#tiles li { -moz-box-shadow:0 1px 2px #333333 }
+
+/* -ms-filter */
+.contents_opacity_wrapper:hover { -ms-filter:"alpha(opacity=90)" }
+.contents_user_name { -ms-filter:"alpha(opacity=80)" }
+
+/* -webkit-border-radius */
+#tiles li { -webkit-border-radius:2px }
+.buy-btn { -webkit-border-radius:8px }
+
+/* -webkit-box-shadow */
+#tiles li { -webkit-box-shadow:0 1px 2px #333333 }
+
+/* background-color */
+#search_title { background-color:rgba(52, 73, 94,0.1) }
+#tiles li { background-color:#ffffff }
+.buy-btn { background-color:#2C5379 }
+.buy-btn:hover { background-color:#EB2142 }
+.help_type { background-color:rgba(236, 240, 241,0.9) }
+
+/* background-image */
+.buy-btn { background-image:-moz-linear-gradient(top, #2C5379, #2C5379) }
+.buy-btn { background-image:-ms-linear-gradient(top, #2C5379, #2C5379) }
+.buy-btn { background-image:-o-linear-gradient(top, #2C5379, #2C5379) }
+.buy-btn { background-image:-webkit-gradient(linear, left top, left bottom, from(#2C5379), to(#2C5379)) }
+.buy-btn { background-image:-webkit-linear-gradient(top, #2C5379, #2C5379) }
+.buy-btn { background-image:linear-gradient(to bottom, #2C5379, #2C5379) }
+.buy-btn:hover { background-image:-moz-linear-gradient(top, #EB2142, #EB2142) }
+.buy-btn:hover { background-image:-ms-linear-gradient(top, #EB2142, #EB2142) }
+.buy-btn:hover { background-image:-o-linear-gradient(top, #EB2142, #EB2142) }
+.buy-btn:hover { background-image:-webkit-gradient(linear, left top, left bottom, from(#EB2142), to(#EB2142)) }
+.buy-btn:hover { background-image:-webkit-linear-gradient(top, #EB2142, #EB2142) }
+.buy-btn:hover { background-image:linear-gradient(to bottom, #EB2142, #EB2142) }
+
+/* border */
+#tiles li { border:1px solid #dedede }
+.buy-btn { border:0px solid #1d3750 }
+.buy-btn:hover { border:0px solid #11202e }
+
+/* border-radius */
+#tiles li { border-radius:2px }
+.buy-btn { border-radius:8px }
+
+/* bottom */
+.help_type { bottom:110px }
+
+/* box-shadow */
+#tiles li { box-shadow:0 1px 2px #333333 }
+
+/* color */
+#search_title { color:#7C858E }
+#tiles li p { color:#666 }
+.buy-btn { color:#FFFFFF !important }
+.find_status { color:#737373 }
+.help_type_p { color:#08233E }
+.title { color:#0F1419 }
+
+/* cursor */
+#tiles li { cursor:pointer }
+
+/* display */
+#tiles li img { display:block }
+.buy-btn { display:inline-block }
+.initial { display:none }
+
+/* filter */
+.buy-btn { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#2C5379, endColorstr=#2C5379) }
+.buy-btn:hover { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#EB2142, endColorstr=#EB2142) }
+.contents_opacity_wrapper:hover { filter:alpha(opacity=90) }
+.contents_user_name { filter:alpha(opacity=80) }
+
+/* float */
+#user_name_wrapper { float:right }
+.buy_item_wrapper_left { float:left }
+.buy_item_wrapper_right { float:left }
+.find_status { float:left }
+.help_type_p { float:left }
+.want_status { float:left }
+div .nailthum_wrapper { float:right }
+
+/* font-family */
+#search_title { font-family:Lily Script One, cursive }
+.buy-btn { font-family:arial, sans-serif }
+.contents_user_name { font-family:Tauri, sans-serif }
+.find_status { font-family:'Signika', sans-serif }
+.help_type_p { font-family:Tienne, serif }
+.want_status { font-family:'Signika', sans-serif }
+
+/* font-size */
+#search_title { font-size:180% }
+#tiles li p { font-size:12px }
+.bookmark { font-size:120% }
+.buy-btn { font-size:24px }
+.contents_user_name { font-size:80% }
+.price { font-size:120% }
+.title { font-size:103% }
+
+/* font-weight */
+.buy-btn { font-weight:bold }
+
+/* height */
+#search_title { height:40px }
+#search_title_wrapper { height:40px }
+#tiles ali:nth-child(3n) { height:175px }
+#tiles ali:nth-child(5n) { height:250px }
+#user_name_wrapper { height:28px }
+.buy_item_wrapper_left { height:62px }
+.buy_item_wrapper_right { height:62px }
+.find_want_status { height:32px }
+.help_type { height:25px }
+.title_status { height:42px }
+.user_data { height:30px }
+div .nailthum_wrapper { height:30px }
+
+/* left */
+.want_btn_wrapper { left:70px }
+
+/* margin */
+#main { margin:0 auto }
+#question_right { margin:0px auto }
+#search_title { margin:0 auto }
+#tiles li p { margin:7px 0 0 7px }
+
+/* margin-left */
+.help_type_p { margin-left:5px }
+.nailthum_wrapper img { margin-left:4px }
+
+/* margin-right */
+.find_status { margin-right:12px }
+
+/* margin-top */
+#search_title { margin-top:20px }
+.find_status { margin-top:4px }
+.nailthum_wrapper img { margin-top:3px }
+.want_status { margin-top:4px }
+
+/* opacity */
+.contents_opacity_wrapper:hover { opacity:0.9 }
+.contents_user_name { opacity:0.8 }
+
+/* padding */
+#main { padding:30px 0 30px 0 !important }
+.buy-btn { padding:6px 30px 4px 30px }
+.title { padding:0px }
+.title_status { padding:3px }
+
+/* padding-bottom */
+#tiles ali:nth-child(4n-3) { padding-bottom:30px }
+
+/* padding-left */
+.find_status { padding-left:5px }
+
+/* padding-top */
+.icon_high_set { padding-top:4px }
+
+/* position */
+.buy-btn { position:relative }
+.help_type { position:absolute }
+.icon_high_set { position:relative }
+.want_btn_wrapper { position:absolute }
+
+/* text-align */
+#search_title { text-align:center }
+#user_name_wrapper { text-align:left }
+.title_status { text-align:left }
+
+/* text-decoration */
+.buy-btn { text-decoration:none }
+
+/* text-shadow */
+.buy-btn { text-shadow:3px 3px 0 rgba(0,0,0,0.3) }
+
+/* top */
+.buy-btn { top:7px }
+.want_btn_wrapper { top:90px }
+
+/* vertical-align */
+.help_type { vertical-align:middle }
+
+/* visibility */
+.contents_opacity_wrapper:hover .want_btn_wrapper { visibility:visible }
+.want_btn_wrapper { visibility:hidden }
+
+/* width */
+#question_right { width:1400px }
+#search_title { width:300px }
+#search_title_wrapper { width:100% }
+#tiles li { width:250px }
+#user_name_wrapper { width:90px }
+.buy_item_wrapper_left { width:120px }
+.buy_item_wrapper_right { width:130px }
+.find_want_status { width:100px }
+.help_type { width:100% }
+.title_status { width:244px }
+.user_data { width:120px }
+div .nailthum_wrapper { width:30px }
+
+/* word-break */
+.title { word-break:break-all }
+
+/* z-index */
+.contents_opacity_wrapper { z-index:100 }
+.help_type { z-index:102 }
+.want_btn_wrapper { z-index:101 }

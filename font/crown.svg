@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2014 by original authors @ fontello.com</metadata>
+<defs>
+<font id="crown" horiz-adv-x="1000" >
+<font-face font-family="crown" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="clock" unicode="&#xe801;" d="m460 810q190 0 325-135t135-325t-135-325t-325-135t-325 135t-135 325t135 325t325 135z m0-820q150 0 255 106t105 254q0 150-105 255t-255 105q-148 0-254-105t-106-255q0-148 106-254t254-106z m36 620l0-244l150-150l-50-50l-170 170l0 274l70 0z" horiz-adv-x="920" />
+<glyph glyph-name="briefcase" unicode="&#xe800;" d="m456 326l0-100l-456 0q8 226 10 292q4 108 100 108l160 0q16 26 37 67t23 45q14 26 23 32t37 6l222 0q26 0 36-7t22-31q18-32 60-112l160 0q96 0 100-108l10-292l-454 0l0 100l-90 0z m-74 354l-28-54l292 0l-28 54q-14 26-42 26l-152 0q-28 0-42-26z m164-604l0 100l430 0q-6-88-10-166q-6-84-90-84l-750 0q-90 0-90 84l-10 166l430 0l0-100l90 0z" horiz-adv-x="1000" />
+<glyph glyph-name="shop" unicode="&#xe802;" d="m300 775c-50 0-94-50-100-100l-17-150l-83 0c-25 0-50-25-50-50l-50-500c0-25 25-50 50-50l650 0c25 0 50 25 50 50l-50 500c0 25-25 50-50 50l-83 0l-17 150c-6 50-50 100-100 100z m0-50l150 0c25 0 47-25 50-50l17-150l-284 0l17 150c3 25 25 50 50 50z" horiz-adv-x="750" />
+</font>
+</defs>
+</svg>

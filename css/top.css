@@ -1,0 +1,447 @@
+/* -moz-border-radius */
+#button_example { -moz-border-radius:0px }
+#nav_btn_help { -moz-border-radius:0px }
+#nav_btn_latest { -moz-border-radius:0px }
+#nav_btn_popular { -moz-border-radius:0px }
+#nav_btn_setting { -moz-border-radius:0px }
+#tiles li { -moz-border-radius:2px }
+.subject_buttons { -moz-border-radius:0px }
+
+/* -moz-box-shadow */
+#tiles li { -moz-box-shadow:0 1px 2px #333333 }
+.subject_buttons { -moz-box-shadow:rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0 }
+
+/* -ms-filter */
+.contents_opacity_wrapper:hover { -ms-filter:"alpha(opacity=90)" }
+.contents_user_name { -ms-filter:"alpha(opacity=80)" }
+
+/* -webkit-border-radius */
+#button_example { -webkit-border-radius:0px }
+#nav_btn_help { -webkit-border-radius:0px }
+#nav_btn_latest { -webkit-border-radius:0px }
+#nav_btn_popular { -webkit-border-radius:0px }
+#nav_btn_setting { -webkit-border-radius:0px }
+#tiles li { -webkit-border-radius:2px }
+.subject_buttons { -webkit-border-radius:0px }
+
+/* -webkit-box-shadow */
+#tiles li { -webkit-box-shadow:0 1px 2px #333333 }
+.subject_buttons { -webkit-box-shadow:rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0 }
+
+/* background */
+#q_post { background:#f1c40f }
+#q_post:hover { background:#f39c12 }
+.modal { background:#ecf0f1 }
+.subject_buttons { background:#ecf0f1 }
+.subject_buttons { background:-moz-linear-gradient(top, #ecf0f1, #ecf0f1) }
+.subject_buttons { background:-ms-linear-gradient(top, #ecf0f1, #ecf0f1) }
+.subject_buttons { background:-o-linear-gradient(top, #ecf0f1, #ecf0f1) }
+.subject_buttons { background:-webkit-gradient(linear, left top, left bottom, from(#ecf0f1), to(#ecf0f1)) }
+.subject_buttons { background:-webkit-linear-gradient(top, #ecf0f1, #ecf0f1) }
+.subject_buttons:hover { background:#bdc3c7 }
+.subject_buttons:hover { background:-moz-linear-gradient(top, #bdc3c7, #bdc3c7) }
+.subject_buttons:hover { background:-ms-linear-gradient(top, #bdc3c7, #bdc3c7) }
+.subject_buttons:hover { background:-o-linear-gradient(top, #bdc3c7, #bdc3c7) }
+.subject_buttons:hover { background:-webkit-gradient(linear, left top, left bottom, from(#bdc3c7), to(#bdc3c7)) }
+.subject_buttons:hover { background:-webkit-linear-gradient(top, #bdc3c7, #bdc3c7) }
+
+/* background-color */
+#button_example { background-color:#242424 }
+#button_example:hover { background-color:#F5F5F5 }
+#nav_btn_help { background-color:#242424 }
+#nav_btn_help:hover { background-color:#F5F5F5 }
+#nav_btn_latest { background-color:#242424 }
+#nav_btn_latest:hover { background-color:#F5F5F5 }
+#nav_btn_popular { background-color:#242424 }
+#nav_btn_popular:hover { background-color:#F5F5F5 }
+#nav_btn_setting { background-color:#242424 }
+#nav_btn_setting:hover { background-color:#F5F5F5 }
+#question_place { background-color:#ecf0f1 }
+#tiles li { background-color:#ffffff }
+.help_type { background-color:rgba(236, 240, 241,0.6) }
+.q_contents { background-color:gray }
+div #header2 { background-color:#242424 }
+h2 #top_nav { background-color:#2980b9 }
+textarea { background-color:#ecf0f1 }
+
+/* background-image */
+#button_example { background-image:-moz-linear-gradient(top, #242424, #242424) }
+#button_example { background-image:-ms-linear-gradient(top, #242424, #242424) }
+#button_example { background-image:-o-linear-gradient(top, #242424, #242424) }
+#button_example { background-image:-webkit-gradient(linear, left top, left bottom, from(#242424), to(#242424)) }
+#button_example { background-image:-webkit-linear-gradient(top, #242424, #242424) }
+#button_example { background-image:linear-gradient(to bottom, #242424, #242424) }
+#button_example:hover { background-image:-moz-linear-gradient(top, #F5F5F5, #f5f5f5) }
+#button_example:hover { background-image:-ms-linear-gradient(top, #F5F5F5, #f5f5f5) }
+#button_example:hover { background-image:-o-linear-gradient(top, #F5F5F5, #f5f5f5) }
+#button_example:hover { background-image:-webkit-gradient(linear, left top, left bottom, from(#F5F5F5), to(#f5f5f5)) }
+#button_example:hover { background-image:-webkit-linear-gradient(top, #F5F5F5, #f5f5f5) }
+#button_example:hover { background-image:linear-gradient(to bottom, #F5F5F5, #f5f5f5) }
+#nav_btn_help { background-image:-moz-linear-gradient(top, #242424, #242424) }
+#nav_btn_help { background-image:-ms-linear-gradient(top, #242424, #242424) }
+#nav_btn_help { background-image:-o-linear-gradient(top, #242424, #242424) }
+#nav_btn_help { background-image:-webkit-gradient(linear, left top, left bottom, from(#242424), to(#242424)) }
+#nav_btn_help { background-image:-webkit-linear-gradient(top, #242424, #242424) }
+#nav_btn_help { background-image:linear-gradient(to bottom, #242424, #242424) }
+#nav_btn_help:hover { background-image:-moz-linear-gradient(top, #F5F5F5, #f5f5f5) }
+#nav_btn_help:hover { background-image:-ms-linear-gradient(top, #F5F5F5, #f5f5f5) }
+#nav_btn_help:hover { background-image:-o-linear-gradient(top, #F5F5F5, #f5f5f5) }
+#nav_btn_help:hover { background-image:-webkit-gradient(linear, left top, left bottom, from(#F5F5F5), to(#f5f5f5)) }
+#nav_btn_help:hover { background-image:-webkit-linear-gradient(top, #F5F5F5, #f5f5f5) }
+#nav_btn_help:hover { background-image:linear-gradient(to bottom, #F5F5F5, #f5f5f5) }
+#nav_btn_latest { background-image:-moz-linear-gradient(top, #242424, #242424) }
+#nav_btn_latest { background-image:-ms-linear-gradient(top, #242424, #242424) }
+#nav_btn_latest { background-image:-o-linear-gradient(top, #242424, #242424) }
+#nav_btn_latest { background-image:-webkit-gradient(linear, left top, left bottom, from(#242424), to(#242424)) }
+#nav_btn_latest { background-image:-webkit-linear-gradient(top, #242424, #242424) }
+#nav_btn_latest { background-image:linear-gradient(to bottom, #242424, #242424) }
+#nav_btn_latest:hover { background-image:-moz-linear-gradient(top, #F5F5F5, #f5f5f5) }
+#nav_btn_latest:hover { background-image:-ms-linear-gradient(top, #F5F5F5, #f5f5f5) }
+#nav_btn_latest:hover { background-image:-o-linear-gradient(top, #F5F5F5, #f5f5f5) }
+#nav_btn_latest:hover { background-image:-webkit-gradient(linear, left top, left bottom, from(#F5F5F5), to(#f5f5f5)) }
+#nav_btn_latest:hover { background-image:-webkit-linear-gradient(top, #F5F5F5, #f5f5f5) }
+#nav_btn_latest:hover { background-image:linear-gradient(to bottom, #F5F5F5, #f5f5f5) }
+#nav_btn_popular { background-image:-moz-linear-gradient(top, #242424, #242424) }
+#nav_btn_popular { background-image:-ms-linear-gradient(top, #242424, #242424) }
+#nav_btn_popular { background-image:-o-linear-gradient(top, #242424, #242424) }
+#nav_btn_popular { background-image:-webkit-gradient(linear, left top, left bottom, from(#242424), to(#242424)) }
+#nav_btn_popular { background-image:-webkit-linear-gradient(top, #242424, #242424) }
+#nav_btn_popular { background-image:linear-gradient(to bottom, #242424, #242424) }
+#nav_btn_popular:hover { background-image:-moz-linear-gradient(top, #F5F5F5, #f5f5f5) }
+#nav_btn_popular:hover { background-image:-ms-linear-gradient(top, #F5F5F5, #f5f5f5) }
+#nav_btn_popular:hover { background-image:-o-linear-gradient(top, #F5F5F5, #f5f5f5) }
+#nav_btn_popular:hover { background-image:-webkit-gradient(linear, left top, left bottom, from(#F5F5F5), to(#f5f5f5)) }
+#nav_btn_popular:hover { background-image:-webkit-linear-gradient(top, #F5F5F5, #f5f5f5) }
+#nav_btn_popular:hover { background-image:linear-gradient(to bottom, #F5F5F5, #f5f5f5) }
+#nav_btn_setting { background-image:-moz-linear-gradient(top, #242424, #242424) }
+#nav_btn_setting { background-image:-ms-linear-gradient(top, #242424, #242424) }
+#nav_btn_setting { background-image:-o-linear-gradient(top, #242424, #242424) }
+#nav_btn_setting { background-image:-webkit-gradient(linear, left top, left bottom, from(#242424), to(#242424)) }
+#nav_btn_setting { background-image:-webkit-linear-gradient(top, #242424, #242424) }
+#nav_btn_setting { background-image:linear-gradient(to bottom, #242424, #242424) }
+#nav_btn_setting:hover { background-image:-moz-linear-gradient(top, #F5F5F5, #f5f5f5) }
+#nav_btn_setting:hover { background-image:-ms-linear-gradient(top, #F5F5F5, #f5f5f5) }
+#nav_btn_setting:hover { background-image:-o-linear-gradient(top, #F5F5F5, #f5f5f5) }
+#nav_btn_setting:hover { background-image:-webkit-gradient(linear, left top, left bottom, from(#F5F5F5), to(#f5f5f5)) }
+#nav_btn_setting:hover { background-image:-webkit-linear-gradient(top, #F5F5F5, #f5f5f5) }
+#nav_btn_setting:hover { background-image:linear-gradient(to bottom, #F5F5F5, #f5f5f5) }
+.subject_buttons { background-image:-ms-linear-gradient(top, #ecf0f1 0%, #ecf0f1 100%) }
+.subject_buttons:hover { background-image:-ms-linear-gradient(top, #bdc3c7 0%, #bdc3c7 100%) }
+
+/* border */
+#button_example { border:0px solid #18222c }
+#button_example:hover { border:0px solid #080b0e }
+#nav_btn_help { border:0px solid #18222c }
+#nav_btn_help:hover { border:0px solid #080b0e }
+#nav_btn_latest { border:0px solid #18222c }
+#nav_btn_latest:hover { border:0px solid #080b0e }
+#nav_btn_popular { border:0px solid #18222c }
+#nav_btn_popular:hover { border:0px solid #080b0e }
+#nav_btn_setting { border:0px solid #18222c }
+#nav_btn_setting:hover { border:0px solid #080b0e }
+#question_place { border:1px solid #999 }
+#tiles li { border:1px solid #dedede }
+.q_contents { border:1px solid #999 }
+.subject_buttons { border:1px solid #1e2f38 }
+.subject_buttons:hover { border:1px solid #0a3c59 }
+
+/* border-color */
+textarea { border-color:#bdc3c7 }
+
+/* border-radius */
+#button_example { border-radius:0px }
+#nav_btn_help { border-radius:0px }
+#nav_btn_latest { border-radius:0px }
+#nav_btn_popular { border-radius:0px }
+#nav_btn_setting { border-radius:0px }
+#q_post { border-radius:7px }
+#tiles li { border-radius:2px }
+.subject_buttons { border-radius:0px }
+
+/* bottom */
+.help_type { bottom:60px }
+
+/* box-shadow */
+#tiles li { box-shadow:0 1px 2px #333333 }
+.subject_buttons { box-shadow:rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0 }
+textarea { box-shadow:inset 0 1px 2px rgba(0,0,0,0.2) }
+
+/* color */
+#button_example { color:#A18E5C }
+#nav_btn_help { color:#F8F8F8 }
+#nav_btn_latest { color:#F8F8F8 }
+#nav_btn_popular { color:#F8F8F8 }
+#nav_btn_setting { color:#f5f5f5 }
+#q_post { color:#ffffff }
+#subject_name { color:#34495e }
+#tiles li p { color:#666 }
+.find_want_status { color:#737373 }
+.help_type_p { color:#ff0084 }
+.subject_buttons { color:#234257 }
+.subject_buttons:hover { color:#fff }
+
+/* cursor */
+#tiles li { cursor:pointer }
+
+/* display */
+#button_example { display:inline-block }
+#nav_btn_help { display:inline-block }
+#nav_btn_latest { display:inline-block }
+#nav_btn_popular { display:inline-block }
+#nav_btn_setting { display:inline-block }
+#tiles li img { display:block }
+.initial { display:none }
+.modal { display:none }
+.overlay { display:none }
+
+/* filter */
+#button_example { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#242424, endColorstr=#242424) }
+#button_example:hover { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#F5F5F5, endColorstr=#f5f5f5) }
+#nav_btn_help { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#242424, endColorstr=#242424) }
+#nav_btn_help:hover { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#F5F5F5, endColorstr=#f5f5f5) }
+#nav_btn_latest { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#242424, endColorstr=#242424) }
+#nav_btn_latest:hover { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#F5F5F5, endColorstr=#f5f5f5) }
+#nav_btn_popular { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#242424, endColorstr=#242424) }
+#nav_btn_popular:hover { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#F5F5F5, endColorstr=#f5f5f5) }
+#nav_btn_setting { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#242424, endColorstr=#242424) }
+#nav_btn_setting:hover { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#F5F5F5, endColorstr=#f5f5f5) }
+.contents_opacity_wrapper:hover { filter:alpha(opacity=90) }
+.contents_user_name { filter:alpha(opacity=80) }
+
+/* float */
+#dropdown_menu { float:right }
+#other_link { float:right }
+#question_place { float:right }
+#subject_name { float:left }
+#subject_select { float:left }
+#user_name_wrapper { float:left }
+.closeBtn { float:right }
+.find_status { float:left }
+.help_type_p { float:left }
+.nailthum_wrapper { float:left }
+.q_contents { float:left }
+.subject_buttons { float:left }
+.want_status { float:left }
+div #user_img_icon { float:right }
+h2 #top_nav { float:left }
+
+/* font-family */
+#button_example { font-family:Nunito, sans-serif }
+#nav_btn_help { font-family:Nunito, sans-serif }
+#nav_btn_latest { font-family:Nunito, sans-serif }
+#nav_btn_popular { font-family:Nunito, sans-serif }
+#nav_btn_setting { font-family:Nunito, sans-serif }
+#other_link { font-family:'Helvetica Neue' }
+#q_post { font-family:Arial }
+.contents_user_name { font-family:Tauri, sans-serif }
+.help_type { font-family:Sofia, cursive }
+.subject_buttons { font-family:helvetica, serif }
+.subject_buttons { font-family:monospace }
+textarea { font-family:'Helvetica Neue' }
+
+/* font-size */
+#button_example { font-size:24px }
+#computer { font-size:large }
+#dropdown_icon { font-size:180% }
+#nav_btn_help { font-size:24px }
+#nav_btn_latest { font-size:24px }
+#nav_btn_popular { font-size:24px }
+#nav_btn_setting { font-size:24px }
+#other_link { font-size:120% }
+#q_post { font-size:22px }
+#subject_name { font-size:350% }
+#tiles li p { font-size:12px }
+.contents_user_name { font-size:80% }
+.other { font-size:large }
+.subject_buttons { font-size:24px }
+textarea { font-size:14px }
+
+/* font-weight */
+#button_example { font-weight:bold }
+#nav_btn_help { font-weight:bold }
+#nav_btn_latest { font-weight:bold }
+#nav_btn_popular { font-weight:bold }
+#nav_btn_setting { font-weight:bold }
+
+/* height */
+#dropdown_menu { height:20px }
+#nav_wrapper { height:90px }
+#question_place { height:320px }
+#question_right { height:100% }
+#tiles ali:nth-child(3n) { height:175px }
+#tiles ali:nth-child(5n) { height:250px }
+#top_content { height:100% }
+#top_wrapper { height:100% }
+#user_name_wrapper { height:28px }
+.find_want_status { height:30px }
+.help_type { height:22px }
+.nailthum_wrapper { height:28px }
+.overlay { height:100% }
+.q_contents { height:320px }
+.subject_buttons { height:50px }
+.user_data { height:30px }
+div #header2_nav { height:38px }
+div #header2_wrapper { height:37px }
+div #user_img_icon { height:50px }
+h2 #top_nav { height:60px }
+
+/* left */
+.overlay { left:0 }
+.want_btn_wrapper { left:160px }
+
+/* letter-spacing */
+#subject_name { letter-spacing:-4px }
+
+/* line-height */
+#subject_name { line-height:72px }
+.subject_buttons { line-height:10px }
+
+/* list-style-type */
+#tiles { list-style-type:none }
+
+/* margin */
+#main { margin:0 auto }
+#nav_wrapper { margin:0 auto }
+#question_place { margin:15px }
+#question_right { margin:0px auto !important }
+#tiles { margin:0 }
+#tiles li p { margin:7px 0 0 7px }
+#top_wrapper { margin:0 auto }
+.q_contents { margin:15px }
+.subject_buttons { margin:0.5px }
+div #header2_nav { margin:0 auto !important }
+div #header2_wrapper { margin:0 auto }
+h2 #top_nav { margin:10px }
+
+/* margin-bottom */
+#top_content { margin-bottom:30px }
+div #header2 { margin-bottom:20px }
+
+/* margin-left */
+.help_type_p { margin-left:5px }
+.nailthum_wrapper img { margin-left:4px }
+
+/* margin-right */
+.find_status { margin-right:12px }
+
+/* margin-top */
+#dropdown_menu { margin-top:10px }
+.find_status { margin-top:4px }
+.nailthum_wrapper img { margin-top:3px }
+.want_status { margin-top:4px }
+
+/* min-height */
+.modal { min-height:245px }
+
+/* opacity */
+.contents_opacity_wrapper:hover { opacity:0.9 }
+.contents_user_name { opacity:0.8 }
+
+/* overflow */
+.modal { overflow:auto }
+
+/* padding */
+#button_example { padding:0px 13px 1px 13px }
+#main { padding:30px 0 30px 0 }
+#nav_btn_help { padding:0px 13px 1px 13px }
+#nav_btn_latest { padding:0px 13px 1px 13px }
+#nav_btn_popular { padding:0px 13px 1px 13px }
+#nav_btn_setting { padding:0px 13px 1px 13px }
+#q_post { padding:4px 14px 4px 14px }
+.modal { padding:0 10px 10px }
+.subject_buttons { padding:19.5px 39px }
+
+/* padding-bottom */
+#tiles ali:nth-child(4n-3) { padding-bottom:30px }
+
+/* padding-top */
+.icon_high_set { padding-top:4px }
+
+/* position */
+#nav_wrapper { position:relative }
+#other_link { position:relative }
+#tiles { position:relative }
+#top_content { position:relative }
+#top_wrapper { position:relative }
+.help_type { position:absolute }
+.icon_high_set { position:relative }
+.modal { position:absolute }
+.overlay { position:fixed }
+.want_btn_wrapper { position:absolute }
+
+/* right */
+#other_link { right:30px }
+
+/* text-align */
+#all_subject { text-align:center }
+#user_name_wrapper { text-align:left }
+.subject_buttons { text-align:center }
+
+/* text-color */
+.modalLink { text-color:#2980b9 }
+
+/* text-decoration */
+#button_example { text-decoration:none }
+#nav_btn_help { text-decoration:none }
+#nav_btn_latest { text-decoration:none }
+#nav_btn_popular { text-decoration:none }
+#nav_btn_setting { text-decoration:none }
+#q_post { text-decoration:none }
+#q_post:hover { text-decoration:none }
+.subject_buttons { text-decoration:none }
+
+/* text-shadow */
+#button_example { text-shadow:3px 3px 0 rgba(0,0,0,0.3) }
+#nav_btn_help { text-shadow:3px 3px 0 rgba(0,0,0,0.3) }
+#nav_btn_latest { text-shadow:3px 3px 0 rgba(0,0,0,0.3) }
+#nav_btn_popular { text-shadow:3px 3px 0 rgba(0,0,0,0.3) }
+#nav_btn_setting { text-shadow:3px 3px 0 rgba(0,0,0,0.3) }
+#subject_name { text-shadow:1px 1px 3px #fff,3px 3px 6px #888 }
+.subject_buttons { text-shadow:#7ea4bd 0 1px 0 }
+.subject_buttons:hover { text-shadow:#1e4158 0 1px 0 }
+
+/* top */
+#other_link { top:40px }
+.icon_high_set { top:2px }
+.overlay { top:0 }
+.want_btn_wrapper { top:1px }
+
+/* vertical-align */
+#other_link { vertical-align:middle }
+.help_type { vertical-align:middle }
+.subject_buttons { vertical-align:middle }
+
+/* visibility */
+.contents_opacity_wrapper:hover .want_btn_wrapper { visibility:visible }
+.want_btn_wrapper { visibility:hidden }
+
+/* width */
+#dropdown_menu { width:30px }
+#nav_wrapper { width:1150px }
+#question_left { width:280px }
+#question_place { width:251px }
+#question_right { width:1400px }
+#tiles li { width:200px }
+#top_content { width:100% }
+#top_wrapper { width:100% }
+#user_name_wrapper { width:170px }
+.find_want_status { width:200px }
+.help_type { width:100% }
+.modal { width:870px }
+.nailthum_wrapper { width:30px }
+.overlay { width:100% }
+.q_contents { width:250px }
+.subject_buttons { width:170px }
+.user_data { width:200px }
+div #header2 { width:100% }
+div #header2_nav { width:600px }
+div #header2_wrapper { width:1200px }
+div #user_img_icon { width:50px }
+h2 #top_nav { width:520px }
+
+/* z-index */
+.contents_opacity_wrapper { z-index:100 }
+.help_type { z-index:1 }
+.modal { z-index:1001 }
+.overlay { z-index:1000 }
+.want_btn_wrapper { z-index:101 }

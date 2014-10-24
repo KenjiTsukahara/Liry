@@ -1,0 +1,34 @@
+<?php
+	include 'common.php';
+	
+	if (empty($_SESSION['me'])) {
+		header('Location: '.SITE_URL.'index.html');
+		exit;
+	}
+
+
+	if(empty($_POST['contents']) && empty($_POST['comments'])) {
+		
+		$page_url_get = $_SERVER['HTTP_REFERER'];
+		header("Location: $page_url_get");
+	
+	} else {
+		
+	        
+		$sql = "insert into comment 
+		(comment,user_id, contents_id,created) 
+		values 
+		(:c_text, :user, :contents, now())";
+		$f_comment = $dbh->prepare($sql);
+		$params = array(
+		":c_text"=>$_POST['comments'],
+		":user" => $_SESSION['me']['id'],
+		":contents" => $_POST['contents']
+		);
+		$f_comment->execute($params);
+	
+	}
+
+
+
+?>

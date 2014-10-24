@@ -1,0 +1,285 @@
+<?php 
+	include 'common.php';
+	
+	if (empty($_SESSION['me'])) {
+	    header('Location: '.SITE_URL.'index.html');
+	    exit;
+	}
+	
+    //user_page_all_contents
+ $stmt2 = $dbh->prepare("select id, picture, likes, finds, user_id, type from contents_q where user_id=:request");
+ $stmt2->execute(array(":request"=>$_SESSION['me']['id']));
+
+    
+    $want_c = $dbh->prepare("select id, picture, likes, finds, user_id, type from contents_q where id in (select like_contents_id from likes where like_user_id=:request) 
+order by created desc;");
+	$want_c->execute(array(":request"=>$_SESSION['me']['id']));
+   
+    //session prof get
+    $stmt = $dbh->prepare("select picture, name, prof from user_data where id=:request");
+    $stmt->execute(array(":request"=>$_SESSION['me']['id']));
+    $prof = $stmt->fetch();
+?>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+<meta charset="utf-8">
+<title>Liry</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<!--Require Stylesheet-->
+<link rel="shortcut icon" type="image/ico" href="img/favicon.ico" />
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/top.css">
+<link rel="stylesheet" href="css/mypage_want.css">
+<link rel="stylesheet" href="js/jquery.nailthumb.1.1.min.css">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.css">
+<link href="js/jquery.minimalect.css" type="text/css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Kite+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Sofia' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Scada' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Flamenco' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Tienne:700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Tauri' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/fontello.css">
+<link rel="stylesheet" href="css/animation.css">
+<link rel="stylesheet" href="css/fontello-ie7.css">
+<link rel="stylesheet" href="css/square_thum.css">
+
+</head>
+<body>
+
+<div id="wrapper">
+<div id="wrap-top">
+	<header>
+	<div id="header">
+		<div id="top_logo">
+			<a href="index" id="logo_link"><img src="img/LIRY_LOGO2.png" style="height:48px;"/></a>
+		</div>
+	
+		<div id="nav_search">
+			<form name="searchform2" id="searchform2" method="get" action="search_q">  
+				<input name="search_word" id="keywords2" value="" type="text" placeholder="Search" style="color:#333333;"/>  
+				<input type="image" src="img/btn2.gif" alt="検索" id="searchBtn2" />  
+			</form>
+		</div>
+	
+			<div id="header_signin">
+				<div id="dropdown_menu">
+					<ul id="menu">
+						<li style="margin-top:5px; margin-left:5px;">
+						<a href="#"><i class="fa fa-cogs" style="font-size:150%;">
+						</i></a>
+							  <ul>
+								  <li><a href="mypage_want" class="menu_li">Mypage</a></li>
+								  <li><a href="mypage_edit" class="menu_li">Setting</a></li>
+								  <li><a href="logout.php" class="menu_li">Logout</a></li>
+							  </ul>
+						</li>
+					</ul>
+				</div>
+			
+				<div id="user_img_icon">
+					<a href="mypage_post"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;">
+					   <img src="<?php echo h($prof['picture']); ?>"/>
+					</div></a>
+				</div>
+			
+			</div><!--header_signin-->
+		</div>
+	</header>
+
+	<div id="header2">
+		<div id="header2_wrapper">
+			<div id="header2_nav">
+				<a id="nav_btn_latest" href="index">Latest</a>
+				<a id="nav_btn_help" href="help">Help!</a>
+				<a id="nav_btn_popular" href="popular">Popular</a>
+				<a id="button_example" href="post">POST<i class="fa fa-camera" style="margin-left:3px;"></i></a>
+			</div>
+		</div>
+	</div>
+	
+	<div id="profile_100">
+		<div id="profile_wrapper1">
+			<div id="profile_wrapper2"> 
+			
+				<div id="profile_img_icon">
+				    <img src="<?php echo h($prof['picture']); ?>" style="width:130px; height:130px;"/>
+				</div><!--profile_img_icon-->
+			
+				<div id="profile_user_name_wrapper">
+					<h2 id="profile_user_name"><?php echo h($prof['name']); ?></h2>
+					
+				</div><!--profile_user_name_wrapper-->
+			
+				<div id="profile_user_about_wrapper">
+					<p id="profile_user_about"><?php echo h($prof['prof']); ?></p>			
+				</div><!--profile_user_about-->
+				
+			</div><!--profile_wrapper2-->
+		
+			<div id="my_items_nav_wrapper">
+				<div id="my_items_nav">
+					<a id="profile_button_want" href="">Want</a>
+					<a id="profile_button_post" href="mypage_post">Post</a>
+					<a id="profile_button_tobuy-list" href="mypage_to-buylist">To-Buy List</a>
+				</div>
+			</div><!--my_items_nav_wrapper-->
+		
+		</div><!--profile_wrapper1-->
+	</div><!--profile_100-->
+	
+	<div id="loading">
+			<img src="img/loading.gif" >
+	</div>
+	
+		<div id="top_content">
+			<div id="top_wrapper" >
+				<div id="question_right">
+				
+					<div id="main" role="main">
+					 <ul id="tiles">
+					 
+					 <?php while($all_c =  $want_c->fetch(PDO::FETCH_ASSOC)) {?>
+					    <li style="display:none;">
+						     <div class="contents_opacity_wrapper">
+							     <div class="want_btn_wrapper">
+									<form name="like" method="post" action="" class="want_btn2 like_form">			        		
+										<input type="hidden" value="<?php echo $all_c['id']; ?>" name="contents2">
+										<?php
+											$like = $dbh->prepare("select id from likes where like_user_id=:me AND like_contents_id=:request");
+											$like->execute(array(":me"=>$_SESSION['me']['id'],":request"=>$all_c['id']));
+											$likes = $like->fetch();
+										if(empty($likes)) {
+										?>
+										<input type="image" id=<?php echo $all_c['id']; ?> src="img/want_btn_before.png" style="border:0;">
+										<?php } else { ?>
+										<input type="image" id=<?php echo $all_c['id']; ?> src="img/want_btn_after.png" style="border:0;">
+										<?php } ?>
+									</form>
+							    </div>
+						    
+							     <a href="contents?id=<?php echo h($all_c['id'])?>"><img src="<?php echo h($all_c['picture']); ?>" style="width:100%; potision:relateve;" class="item_imgs"></a>
+								<div class="help_type"><span class="help_type_p"><?php echo h($all_c['type']); ?></span></div>
+						    </div><!--contents_opacity_wrapper-->
+					    
+						    <div class="find_want_status">
+							    <span class="find_status"><span class="icon_high_set"><i class="icon-crown" style="color:#bdc3c7;font-size:120%;"></i></span><?php echo h($all_c['finds']); ?></span>
+							    <span class="want_status"><i class="icon-heart-1" style="color:#bdc3c7"></i><span id="<?php echo "change". h($all_c['id']); ?>"><?php echo h($all_c['likes']); ?></span></span>
+						    </div>
+						    
+						   <?php
+								$stmt2 = $dbh->prepare("select picture, name, prof from user_data where id=:request");
+							    $stmt2->execute(array(":request"=>$all_c['user_id']));
+							    $prof2 = $stmt2->fetch(); 
+							 ?>
+						    
+							    <div class="user_data">
+									<div class="nailthum_wrapper">  
+								
+										<img src="<?php echo h($prof2['picture']); ?>" style="width:23px; height:23px;"/>
+								
+									</div><!--nailthum_wrapper-->
+								<div id="user_name_wrapper">    
+									<span class="contents_user_name"><?php echo h($prof2['name']); ?></span>
+								</div>
+						    </div><!--user_data-->
+					    </li>    
+					    
+					 <?php } ?>  
+					
+					  </ul>
+					</div>
+				</div><!--question_right-->
+			</div><!--top-wrapper-->
+		</div><!--content-->
+	</div><!--wrap-top-->
+</div><!--wrapper-->
+
+
+<!--js-->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="js/jquery.wookmark.js"></script>
+<script src="js/jquery.nailthumb.1.1.min.js"></script>
+<script src="js/jquery.minimalect.js" type="text/javascript"></script>
+<script>
+	
+	$("#menu li").hover(function() {
+		$(this).children('ul').show();
+	}, function() {
+		$(this).children('ul').hide();
+});
+	
+</script>
+<script type="text/javascript">
+	$(window).load(function(){
+		$(document).ready(new function() {
+		    var options = {
+		      autoResize: true,
+		      container: $('#main'), 
+		      offset: 12, 
+		      itemWidth: 200      
+		    };
+		
+		    var handler = $('#tiles li'); 
+		      
+		    handler.wookmark(options);
+		});
+	});
+</script>
+<!--user img icon resize-->
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.nailthumb-container').nailthumb({width:40,height:40,method:'crop',fitDirection:'top'});
+		$("#select1").minimalect({ theme: "bubble", placeholder: "ssss" });
+	
+	});
+</script>
+<script>
+	$(function(){
+	
+		$("form.like_form").submit(function(event) {
+			event.preventDefault();
+			var val = $(this).children("input[name='contents2']").val();
+			$.ajax({
+				type: 'POST',
+				url: 'like.php',
+				data: {"contents": val},
+				success: function(data) {
+					var dt = data.split(",");
+					var imgSrc = ($("#" + dt[0]).attr("src") == "img/want_btn_before.png")? "img/want_btn_after.png": "img/want_btn_before.png";
+					$("#" + dt[0]).attr("src", imgSrc);
+					$("span#change" + dt[0]).text(dt[1]);
+				
+				}
+			});
+			return false;
+		});
+	});
+	
+</script> 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51403977-1', 'liry.me');
+  ga('send', 'pageview');
+
+</script>
+<script>
+	
+	$(window).load(function(){
+	$("#loading").hide();
+});
+	
+</script>
+</body>
+</html>

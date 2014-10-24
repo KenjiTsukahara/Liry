@@ -1,0 +1,79 @@
+<?php 
+	include 'common_join.php';
+?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+<meta charset="utf-8">
+<title>Liryについて</title>
+<meta name="description" content="ファッションアイテムの購入先を見つけよう">
+<meta name="keywords" content="fashion,靴,服,家具,EC,Liry">
+
+<!--Require Stylesheet-->
+<link rel="shortcut icon" type="image/ico" href="../img/favicon.ico" />
+<link rel="stylesheet" href="../css/login.css">
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/validationEngine.jquery.css" type="text/css"/>
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans:700' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body>
+
+<div id="wrapper">
+	<div id="wrap-top">
+		<header>
+			<div id="header">
+				<div id="top_logo">
+					<a href="index" style="float:left;"><img src="../img/LIRY_LOGO2.png" style="height:48px;"/></a>
+				</div>
+			</div>
+		</header>
+	</div><!--wrap-top-->
+	<div id="privacy_wrapper" style="height:950px;width:800px; margin: 0 auto; padding-top:50px;">
+		<div><img src="../img/about_title.png" id="title_about"></div>
+		<p id="about_text" style="margin-top:30px;">Liryとは</p>
+		<p id="about_question">「この写真の服すごくかわいいけど、どこに売ってるんだろう」<br/>
+		「自分の持っているこの服にはどんな靴が合うのかなぁ」<br/></p>
+		<p id="about_text">このようなファッションに関する疑問を解決してくれるサービスです。</p>
+		
+		<p id="about_text">あなたの欲しいアイテムやコーディネートしたいアイテムの画像やヒントを投稿すれば、ユーザー達がその購入先を見つけてきてくれます。</p>
+		<img src="../img/about_liry_insert_img.png" style="width:700px;margin:10px;">
+		<p id="about_text">そしてLiryでは他のショップには売っていないような魅力的なアイテムをたくさん見つけることができます。<br/>きっとあなたにもお気に入りのアイテムが見つかるはずです。</p>
+		<p id="about_text">気になった投稿には<span id="like_btn_color">Like</span>ボタンを、購入したいアイテムは<span id="buylist_btn_color">To-Buylist</span>ボタンを押しましょう。<br/>
+			それぞれMyPageで確認することができます。
+		</p>
+	</div>
+
+	<div id="footer" style="height:25px; background-color:black;">
+		<div id="footer_list_wrapper">
+			<ul style="margin-left:10px;">
+				<a href="" style="color:blue; margin:0 auto; float:left; color:white;"><li>Liryについて&nbsp;&nbsp;</li></a>
+				<a href="terms" style="color:blue; margin:0 auto; float:left; color:white;"><li>利用規約&nbsp;&nbsp;</li></a>
+				<a href="privacy" style="color:blue; margin:0 auto; float:left; color:white;"><li>Privacy&Policy&nbsp;&nbsp;</li></a>
+				<a href="contact" style="color:blue; margin:0 auto; float:left; color:white;"><li>contact&nbsp;&nbsp;</li></a>
+			</ul>
+		</div>
+		<div id="footer_down_wrapper" style="height:25px; float:right; color:white; margin-right:10px;"><p id="copyright">Copyright © 2014 Liry</p></div>
+	</div>
+</div><!--wrapper-->
+
+
+
+
+<!--js-->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="../js/footer.fixed.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51403977-1', 'liry.me');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

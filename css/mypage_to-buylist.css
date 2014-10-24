@@ -1,0 +1,208 @@
+/* -moz-box-shadow */
+#profile_wrapper1 { -moz-box-shadow:0 1px 2px #333333 }
+
+/* -ms-filter */
+#profile_user_rank { -ms-filter:"alpha(opacity=70)" }
+
+/* -webkit-box-shadow */
+#profile_wrapper1 { -webkit-box-shadow:0 1px 2px #333333 }
+
+/* background-color */
+#my_items_nav_wrapper { background-color:#ecf0f1 }
+#profile_button_all { background-color:#34495E }
+#profile_button_all:hover { background-color:#333333 }
+#profile_button_post { background-color:#34495E }
+#profile_button_post:hover { background-color:#333333 }
+#profile_button_tobuy-list { background-color:#333333 }
+#profile_button_tobuy-list:hover { background-color:#333333 }
+#profile_button_want { background-color:#34495E }
+#profile_button_want:hover { background-color:#333333 }
+div #profile_wrapper2 { background-color:#ffffff }
+
+/* background-image */
+#profile_button_all { background-image:-moz-linear-gradient(top, #34495E, #34495E) }
+#profile_button_all { background-image:-ms-linear-gradient(top, #34495E, #34495E) }
+#profile_button_all { background-image:-o-linear-gradient(top, #34495E, #34495E) }
+#profile_button_all { background-image:-webkit-gradient(linear, left top, left bottom, from(#34495E), to(#34495E)) }
+#profile_button_all { background-image:-webkit-linear-gradient(top, #34495E, #34495E) }
+#profile_button_all { background-image:linear-gradient(to bottom, #34495E, #34495E) }
+#profile_button_all:hover { background-image:-moz-linear-gradient(top, #333333, #333333) }
+#profile_button_all:hover { background-image:-ms-linear-gradient(top, #333333, #333333) }
+#profile_button_all:hover { background-image:-o-linear-gradient(top, #333333, #333333) }
+#profile_button_all:hover { background-image:-webkit-gradient(linear, left top, left bottom, from(#333333), to(#333333)) }
+#profile_button_all:hover { background-image:-webkit-linear-gradient(top, #333333, #333333) }
+#profile_button_all:hover { background-image:linear-gradient(to bottom, #333333, #333333) }
+#profile_button_post { background-image:-moz-linear-gradient(top, #34495E, #34495E) }
+#profile_button_post { background-image:-ms-linear-gradient(top, #34495E, #34495E) }
+#profile_button_post { background-image:-o-linear-gradient(top, #34495E, #34495E) }
+#profile_button_post { background-image:-webkit-gradient(linear, left top, left bottom, from(#34495E), to(#34495E)) }
+#profile_button_post { background-image:-webkit-linear-gradient(top, #34495E, #34495E) }
+#profile_button_post { background-image:linear-gradient(to bottom, #34495E, #34495E) }
+#profile_button_post:hover { background-image:-moz-linear-gradient(top, #333333, #333333) }
+#profile_button_post:hover { background-image:-ms-linear-gradient(top, #333333, #333333) }
+#profile_button_post:hover { background-image:-o-linear-gradient(top, #333333, #333333) }
+#profile_button_post:hover { background-image:-webkit-gradient(linear, left top, left bottom, from(#333333), to(#333333)) }
+#profile_button_post:hover { background-image:-webkit-linear-gradient(top, #333333, #333333) }
+#profile_button_post:hover { background-image:linear-gradient(to bottom, #333333, #333333) }
+#profile_button_tobuy-list { background-image:-moz-linear-gradient(top, #333333, #333333) }
+#profile_button_tobuy-list { background-image:-ms-linear-gradient(top, #333333, #333333) }
+#profile_button_tobuy-list { background-image:-o-linear-gradient(top, #333333, #333333) }
+#profile_button_tobuy-list { background-image:-webkit-gradient(linear, left top, left bottom, from(#333333), to(#333333)) }
+#profile_button_tobuy-list { background-image:-webkit-linear-gradient(top, #333333, #333333) }
+#profile_button_tobuy-list { background-image:linear-gradient(to bottom, #333333, #333333) }
+#profile_button_tobuy-list:hover { background-image:-moz-linear-gradient(top, #333333, #333333) }
+#profile_button_tobuy-list:hover { background-image:-ms-linear-gradient(top, #333333, #333333) }
+#profile_button_tobuy-list:hover { background-image:-o-linear-gradient(top, #333333, #333333) }
+#profile_button_tobuy-list:hover { background-image:-webkit-gradient(linear, left top, left bottom, from(#333333), to(#333333)) }
+#profile_button_tobuy-list:hover { background-image:-webkit-linear-gradient(top, #333333, #333333) }
+#profile_button_tobuy-list:hover { background-image:linear-gradient(to bottom, #333333, #333333) }
+#profile_button_want { background-image:-moz-linear-gradient(top, #34495E, #34495E) }
+#profile_button_want { background-image:-ms-linear-gradient(top, #34495E, #34495E) }
+#profile_button_want { background-image:-o-linear-gradient(top, #34495E, #34495E) }
+#profile_button_want { background-image:-webkit-gradient(linear, left top, left bottom, from(#34495E), to(#34495E)) }
+#profile_button_want { background-image:-webkit-linear-gradient(top, #34495E, #34495E) }
+#profile_button_want { background-image:linear-gradient(to bottom, #34495E, #34495E) }
+#profile_button_want:hover { background-image:-moz-linear-gradient(top, #333333, #333333) }
+#profile_button_want:hover { background-image:-ms-linear-gradient(top, #333333, #333333) }
+#profile_button_want:hover { background-image:-o-linear-gradient(top, #333333, #333333) }
+#profile_button_want:hover { background-image:-webkit-gradient(linear, left top, left bottom, from(#333333), to(#333333)) }
+#profile_button_want:hover { background-image:-webkit-linear-gradient(top, #333333, #333333) }
+#profile_button_want:hover { background-image:linear-gradient(to bottom, #333333, #333333) }
+
+/* border */
+#profile_button_all { border:1px solid #202d3a }
+#profile_button_all:hover { border:1px solid #10161c }
+#profile_button_post { border:1px solid #202d3a }
+#profile_button_post:hover { border:1px solid #10161c }
+#profile_button_tobuy-list { border:1px solid #202d3a }
+#profile_button_tobuy-list:hover { border:1px solid #10161c }
+#profile_button_want { border:1px solid #10161c }
+#profile_button_want { border:1px solid #202d3a }
+#profile_button_want:hover { border:1px solid #10161c }
+
+/* box-shadow */
+#profile_wrapper1 { box-shadow:0 1px 2px #333333 }
+
+/* color */
+#profile_button_all { color:#FFFFFF }
+#profile_button_post { color:#FFFFFF }
+#profile_button_tobuy-list { color:#FFFFFF }
+#profile_button_want { color:#FFFFFF }
+#profile_user_name { color:#333333 }
+#profile_user_rank { color:#2c3e50 }
+
+/* display */
+#profile_button_all { display:inline-block }
+#profile_button_post { display:inline-block }
+#profile_button_tobuy-list { display:inline-block }
+#profile_button_want { display:inline-block }
+
+/* filter */
+#profile_button_all { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#34495E, endColorstr=#34495E) }
+#profile_button_all:hover { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#333333, endColorstr=#333333) }
+#profile_button_post { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#34495E, endColorstr=#34495E) }
+#profile_button_post:hover { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#333333, endColorstr=#333333) }
+#profile_button_tobuy-list { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#333333, endColorstr=#333333) }
+#profile_button_tobuy-list:hover { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#333333, endColorstr=#333333) }
+#profile_button_want { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#34495E, endColorstr=#34495E) }
+#profile_button_want:hover { filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#333333, endColorstr=#333333) }
+#profile_user_rank { filter:alpha(opacity=70) }
+
+/* float */
+#profile_button_all { float:left }
+#profile_button_post { float:left }
+#profile_button_tobuy-list { float:left }
+#profile_button_want { float:left }
+#profile_img_icon { float:left }
+#profile_user_about { float:left }
+#profile_user_about_wrapper { float:left }
+#profile_user_name { float:left }
+#profile_user_name_wrapper { float:left }
+#profile_user_rank { float:left }
+
+/* font-family */
+#profile_button_all { font-family:Nunito, sans-serif }
+#profile_button_post { font-family:Nunito, sans-serif }
+#profile_button_tobuy-list { font-family:Nunito, sans-serif }
+#profile_button_want { font-family:Nunito, sans-serif }
+#profile_user_name { font-family:Scada, sans-serif }
+
+/* font-size */
+#profile_button_all { font-size:28px }
+#profile_button_post { font-size:28px }
+#profile_button_tobuy-list { font-size:28px }
+#profile_button_want { font-size:28px }
+#profile_user_name { font-size:230% }
+
+/* font-weight */
+#profile_button_all { font-weight:bold }
+#profile_button_post { font-weight:bold }
+#profile_button_tobuy-list { font-weight:bold }
+#profile_button_want { font-weight:bold }
+
+/* height */
+#my_items_nav { height:50px }
+#my_items_nav_wrapper { height:50px }
+#profile_img_icon { height:128px }
+#profile_user_about_wrapper { height:100px }
+#profile_user_name_wrapper { height:50px }
+#profile_wrapper1 { height:200px }
+.name_wrapper { height:30px }
+div #profile_100 { height:200px }
+div #profile_wrapper2 { height:150px }
+
+/* left */
+#profile_user_rank { left:140px }
+
+/* margin */
+#my_items_nav { margin:0 auto }
+#my_items_nav_wrapper { margin:0 auto }
+#profile_img_icon { margin:10px }
+#profile_wrapper1 { margin:0 auto }
+div #profile_wrapper2 { margin:0px auto }
+
+/* margin-left */
+#profile_user_about { margin-left:5px }
+
+/* margin-top */
+#profile_user_about { margin-top:10px }
+
+/* opacity */
+#profile_user_rank { opacity:0.7 }
+
+/* padding */
+#profile_button_all { padding:4px 111px 3px 111px }
+#profile_button_post { padding:4px 107px 3px 107px }
+#profile_button_tobuy-list { padding:4px 60px 3px 60px }
+#profile_button_want { padding:4px 107px 3px 107px }
+
+/* position */
+#profile_user_name { position:absolute }
+#profile_user_name_wrapper { position:relative }
+#profile_user_rank { position:absolute }
+
+/* text-decoration */
+#profile_button_all { text-decoration:none }
+#profile_button_post { text-decoration:none }
+#profile_button_tobuy-list { text-decoration:none }
+#profile_button_want { text-decoration:none }
+
+/* text-shadow */
+#profile_button_all { text-shadow:2px 2px 0 rgba(0,0,0,0.3) }
+#profile_button_post { text-shadow:2px 2px 0 rgba(0,0,0,0.3) }
+#profile_button_tobuy-list { text-shadow:2px 2px 0 rgba(0,0,0,0.3) }
+#profile_button_want { text-shadow:2px 2px 0 rgba(0,0,0,0.3) }
+
+/* top */
+#profile_user_rank { top:31px }
+
+/* width */
+#my_items_nav { width:900px }
+#my_items_nav_wrapper { width:1100px }
+#profile_img_icon { width:128px }
+#profile_user_about_wrapper { width:902px }
+#profile_user_name_wrapper { width:902px }
+#profile_wrapper1 { width:1100px }
+.name_wrapper { width:200px }
+div #profile_100 { width:100% }
+div #profile_wrapper2 { width:1100px }

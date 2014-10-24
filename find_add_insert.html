@@ -1,0 +1,130 @@
+<?php 
+	include 'common.php';
+    
+     //session prof get
+    $stmt = $dbh->prepare("select picture, name from user_data where id=:request");
+    $stmt->execute(array(":request"=>$_SESSION['me']['id']));
+    $prof = $stmt->fetch();
+    
+    
+	//judge erorr
+	
+	
+	if(!empty($_POST['f_img']) || !empty($_FILES['f_img']['name'])) {
+	
+		$str = mb_convert_kana($_POST['f_price'], "n", "UTF-8");
+		$str2 = mb_convert_kana($_POST['f_title'], "as", "UTF-8");
+		
+		$currency = $_POST['f_currency'];
+	
+		$usd = json_decode(file_get_contents('http://api.aoikujira.com/kawase/json/usd'));
+		$gbp = json_decode(file_get_contents('http://api.aoikujira.com/kawase/json/gbp'));
+		$eur = json_decode(file_get_contents('http://api.aoikujira.com/kawase/json/eur'));
+		
+		$arr_usd = (array)$usd;
+		$arr_gbp = (array)$gbp;
+		$arr_eur = (array)$eur;
+	
+		switch ($currency) {
+		  case 1:
+		    $price_in = $str;
+		    break;
+		  case 2:
+		    $price_in = $arr_usd['JPY'] * $str;
+		    break;
+		   case 3:
+		    $price_in = $arr_gbp['JPY'] * $str;
+		    break;
+		  case 4:
+		    $price_in = $arr_eur['JPY'] * $str;
+		    break;
+		}
+
+
+		if(!empty($_POST['key'])) {
+		
+			$fileName = $_FILES['f_img']['name'];
+			
+			
+			if(!empty($fileName)) {
+			
+				$ext = substr($fileName, -3);
+				$exts = substr($fileName, -4);
+				
+				if($ext != 'jpg' && $ext != 'gif' && $ext != 'png' && $ext != 'gif' && $exts != 'jpeg') {
+				
+					$erorr = 'type';
+			
+				}
+			
+			}
+		
+			if(empty($erorr)) {
+			
+				//画像をアップロードする
+				$file = date('YmdHis') . $_FILES['f_img']['name'];
+			
+				if(strstr($file, ',,,,,,,,,,')) {
+				
+					$file = str_replace(",,,,,,,,,,","",$file);
+				
+				}
+			
+			
+				$image = 'contents_img/' . $file;
+			
+				move_uploaded_file($_FILES['f_img']['tmp_name'],$image);
+				
+			}
+	
+			} else {
+	
+			if(strstr($_POST['f_img'], ',,,,,,,,,,')) {
+			
+				$_POST['f_img'] = str_replace(",,,,,,,,,,","",$_POST['f_img']);
+			
+			}
+		
+			$image = $_POST['f_img'];
+	
+		}
+
+		//insert
+		 $sql = "insert into contents_f (contents_id, category, title, picture, url_link, price, comment_count, buylist_count, user_id, created, modified,user_name,user_picture) values (:c_id, :category, :title, :picture, :url, :price, :c_count, :b_count, :user_id, now(), now(),:user_name, :user_picture)";
+		        $stmt = $dbh->prepare($sql);
+		        $params = array(
+		            ":c_id" => $_POST['f_contents_id'],
+					":category" => $_POST['f_category'],
+		            ":title" => $str2,
+		            ":picture" => $image,
+		            ":url" => $_POST['f_url'],
+		            ":price" => $price_in,
+					":c_count" => 0,
+					":b_count" => 0,
+		            ":user_id" => $_SESSION['me']['id'],
+		            ":user_name" => $prof['name'],
+		            ":user_picture" => $prof['picture']
+		            );
+		        $stmt->execute($params);
+		        
+		        
+		        //contents_q finds increment
+		        $sql = "UPDATE contents_q SET finds = finds + 1 WHERE id=:request;";
+		        $stmt = $dbh->prepare($sql);
+		        $params = array(
+		            ":request" => $_POST['f_contents_id']
+		            );
+		        $stmt->execute($params);
+	        
+	        
+	        
+	
+		$page_url_get = $_SERVER['HTTP_REFERER'];
+		
+		header('Location: contents?id='. $_POST['f_contents_id']);
+		
+		exit();
+	}
+
+
+?>
