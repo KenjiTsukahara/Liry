@@ -12,12 +12,6 @@
 		 exit;
 	    
 	    }
-	if($_REQUEST['id'] == $_SESSION['me']['id']) {
-	
-	  header('Location: index.html');
-	  exit;
-	
-	}
         
 	//user_page_all_contents
 	$stmt2 = $dbh->prepare("select id, picture, likes, finds, user_id from contents_q where user_id=:request");

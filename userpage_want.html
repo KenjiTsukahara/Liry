@@ -11,13 +11,6 @@
 		exit;
 	
 	}
-	
-	if($_REQUEST['id'] == $_SESSION['me']['id']) {
-	
-		header('Location: mypage_want.html');
-		exit;
-	
-	}
 
         
     $want_c = $dbh->prepare("select id, picture, likes, finds, user_id, type from contents_q where id in (select like_contents_id from likes where like_user_id=:request) 
