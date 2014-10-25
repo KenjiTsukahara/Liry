@@ -82,7 +82,7 @@
 					<a href="#"><i class="fa fa-cogs" style="font-size:150%;">
 					</i></a>
 					  <ul>
-						  <li><a href="mypage_want" class="menu_li">Mypage</a></li>
+						  <li><a href="userpage_want?id=<?php echo h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
 						  <li><a href="mypage_edit" class="menu_li">Setting</a></li>
 						  <li><a href="logout.php" class="menu_li">Logout</a></li>
 					  </ul>
@@ -91,7 +91,7 @@
 			</div>
 		
 		<div id="user_img_icon">
-			<a href="mypage_want"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;">
+			<a href="userpage_want?id=<?php echo h($_SESSION['me']['id']); ?>"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;">
 			    <img src="<?php echo h($prof['picture']); ?>"/>
 			</div></a>
 		</div>
