@@ -42,34 +42,42 @@
 	$like_counts = $like_count->fetchColumn();	
 	
 	
-	//post時刻計算
-	date_default_timezone_set('Asia/Tokyo');
-	$unix = strtotime($contents_q['created']);
-	$now = time();
-	$diff_sec   = $now - $unix;
+	//get posted time
+	function getTime($create_time) {
+	    
+		date_default_timezone_set('Asia/Tokyo');
+	    $unix   = strtotime($create_time);
+	    $now    = time();
+	    $diff_sec   = $now - $unix;
 	
-	if($diff_sec < 60){
-	    $time2   = $diff_sec;
-	    $time2 = floor($time2);
-	    $unit   = "秒前";
-	    $time = $time2.$unit;
-	}elseif($diff_sec < 3600){
-	    $time2   = $diff_sec/60;
-	    $time2 = floor($time2);
-	    $unit   = "分前";
-	    $time = $time2.$unit;
-	}elseif($diff_sec < 86400){
-	    $time2   = $diff_sec/3600;
-	    $time2 = floor($time2);
-	    $unit   = "時間前";
-	    $time = $time2.$unit;
-	}else{
-	    $time2   = $diff_sec/86400;
-	    $time2 = floor($time2);
-	    $unit   = "日前";
-	    $time = $time2.$unit;
+	    if($diff_sec < 60){
+	        $time2   = $diff_sec;
+	        $time2 = floor($time2);
+	        $unit   = "秒前";
+	        $time = $time2.$unit;
+	    }
+	    elseif($diff_sec < 3600){
+	        $time2   = $diff_sec/60;
+	        $time2 = floor($time2);
+	        $unit   = "分前";
+	        $time = $time2.$unit;
+	    }
+	    elseif($diff_sec < 86400){
+	        $time2   = $diff_sec/3600;
+	        $time2 = floor($time2);
+	        $unit   = "時間前";
+	        $time = $time2.$unit;
+	    }else{
+	        $time2   = $diff_sec/86400;
+	        $time2 = floor($time2);
+	        $unit   = "日前";
+	        $time = $time2.$unit;
 	
-	}
+	    }
+    
+    return $time;
+	    	    
+    }
 
 	//session prof get
     $stmt = $dbh->prepare("select picture, name, prof from user_data where id=:request");
@@ -212,7 +220,7 @@
 						<div id="contents_info_wrapper">
 							<span><i class="icon-shop" style="color:#2ecc71;"></i><?php echo h($contents_q['category']); ?></span>
 							<span>&nbsp;</span>
-							<span><i class="icon-clock" style="color:#9b59b6;"></i><?php echo h($time); ?></span>
+							<span><i class="icon-clock" style="color:#9b59b6;"></i><?= getTime($contents_q['created']); ?></span>
 							<span>&nbsp;</span>
 							<span><i class="fa fa-heart" style="color:red;"></i> <span id="<?php echo "change". h($contents_q['id']); ?>"><?php echo h($contents_q['likes']); ?></span></span>
 						</div><!--contents_info_wrapper-->
