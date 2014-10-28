@@ -79,7 +79,7 @@
 						<a href="#"><i class="fa fa-cogs" style="font-size:150%;">
 					</i></a>
 					  <ul>
-						  <li><a href="userpage_want?id=<?php echo h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
+						  <li><a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
 						  <li><a href="mypage_edit" class="menu_li">Setting</a></li>
 						  <li><a href="logout.php" class="menu_li">Logout</a></li>
 					  </ul>
@@ -89,7 +89,7 @@
 	
 		<div id="user_img_icon">
 			<div class="nailthumb-container square-thumb" style="border:1px solid #333333;">
-			    <img src="<?php echo h($prof['picture']); ?>"/>
+			    <img src="<?= h($prof['picture']); ?>"/>
 			</div>
 		</div>
 		</div><!--header_signin-->
@@ -118,7 +118,7 @@
 				<div id="left_wrapper">
 					<p class="title" id="img">Profile Image</p>
 					<div id="prev_img_wrapper">
-						<img src="<?php echo h($prof['picture']); ?>" id="prev_img" class="nailthumb-container2 square-thumb2"/>
+						<img src="<?= h($prof['picture']); ?>" id="prev_img" class="nailthumb-container2 square-thumb2"/>
 					</div>
 					<div id="input_file">
 						<input type="file" name="img" id="input_img"/>
@@ -128,11 +128,11 @@
 					<p class="title" id="name">Name</p>
 					<div id="name_wrapper">
 						<input type="hidden" value="on" class="span12" name="post">
-						<input type="text" value="<?php echo h($prof['name']); ?>" id="input_name" name="name">
+						<input type="text" value="<?= h($prof['name']); ?>" id="input_name" name="name">
 					</div>
 					<p class="title" id="about">About Me</p>
 					<div id="about_wrapper">
-						<textarea id="input_about" name="about"><?php echo h($prof['prof']); ?> </textarea>
+						<textarea id="input_about" name="about"><?= h($prof['prof']); ?> </textarea>
 					</div>
 					<div id="submit_wrapper">
 						<input type="submit" value="変更を保存" id="input_submit"/>

@@ -128,9 +128,9 @@
 	<div id="form_wrapper">
 	<form method="post" id="hoge" action="" name="regist">
 	<p id="title">User name</p>
-	<input type="text" name="user_id" id="user_id" placeholder="user name" class="validate[required,maxSize[12]]" value="<?php echo h($_POST['user_id']); ?>"/>
+	<input type="text" name="user_id" id="user_id" placeholder="user name" class="validate[required,maxSize[12]]" value="<?= h($_POST['user_id']); ?>"/>
 	<p id="title">E-mail <?php if(!empty($error)) { ?><span style="color:red; font-size:60%;">*既に登録されているメールアドレスです</span><?php } ?></p>
-	<input type="text" name="mail" id="mail" placeholder="E-mail" class="validate[required,custom[email]]" value="<?php echo h($_POST['mail']); ?>"//>
+	<input type="text" name="mail" id="mail" placeholder="E-mail" class="validate[required,custom[email]]" value="<?= h($_POST['mail']); ?>"//>
 	<p id="title">Password</p>
 	<input type="password" name="password" id="password" placeholder="password 6-12"  class="validate[required,custom[onlyLetterNumber],minSize[6],maxSize[12]]">
 	<input type="submit" id="submit" value="登録" />

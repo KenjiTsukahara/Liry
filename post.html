@@ -85,7 +85,7 @@
 					<a href="#"><i class="fa fa-cogs" style="font-size:150%;">
 					</i></a>
 					  <ul>
-						  <li><a href="userpage_want?id=<?php echo h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
+						  <li><a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
 						  <li><a href="mypage_edit" class="menu_li">Setting</a></li>
 						  <li><a href="logout.php" class="menu_li">Logout</a></li>
 					  </ul>
@@ -94,8 +94,8 @@
 			</div>
 		
 		<div id="user_img_icon">
-			<a href="userpage_want?id=<?php echo h($_SESSION['me']['id']); ?>"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;">
-			    <img src="<?php echo h($prof['picture']); ?>"/>
+			<a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;">
+			    <img src="<?= h($prof['picture']); ?>"/>
 			</a>
 			</div>
 		</div>
@@ -131,7 +131,7 @@
 					<input type="file" name="image" id="img_up_fileup" draggable="true">
 				</div><!--file_upload-->
 				<div id="other_forms">
-					<textarea name="caption" id="post_url_form_comment" placeholder="comment"><?php echo h($_POST['caption']); ?></textarea>
+					<textarea name="caption" id="post_url_form_comment" placeholder="comment"><?= h($_POST['caption']); ?></textarea>
 					<select name="type" id="post_url_form_type">
 						<option value="">Help Type</option>
 						<option value="same"<?php if($sel_t === "same"){echo 'selected';}else{echo '';}; ?>>SAME　ITEM</option>

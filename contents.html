@@ -1,5 +1,6 @@
 <?php 
 	include 'common.php';
+	include 'function.php'
 	
 	if (empty($_SESSION['me'])) {
 	
@@ -41,43 +42,6 @@
 	$like_count->execute(array(":c_id"=>$REQUEST['id']));
 	$like_counts = $like_count->fetchColumn();	
 	
-	
-	//get posted time
-	function getTime($create_time) {
-	    
-		date_default_timezone_set('Asia/Tokyo');
-	    $unix   = strtotime($create_time);
-	    $now    = time();
-	    $diff_sec   = $now - $unix;
-	
-	    if($diff_sec < 60){
-	        $time2   = $diff_sec;
-	        $time2 = floor($time2);
-	        $unit   = "秒前";
-	        $time = $time2.$unit;
-	    }
-	    elseif($diff_sec < 3600){
-	        $time2   = $diff_sec/60;
-	        $time2 = floor($time2);
-	        $unit   = "分前";
-	        $time = $time2.$unit;
-	    }
-	    elseif($diff_sec < 86400){
-	        $time2   = $diff_sec/3600;
-	        $time2 = floor($time2);
-	        $unit   = "時間前";
-	        $time = $time2.$unit;
-	    }else{
-	        $time2   = $diff_sec/86400;
-	        $time2 = floor($time2);
-	        $unit   = "日前";
-	        $time = $time2.$unit;
-	
-	    }
-    
-    return $time;
-	    	    
-    }
 
 	//session prof get
     $stmt = $dbh->prepare("select picture, name, prof from user_data where id=:request");
@@ -146,7 +110,7 @@
 							<a href="#"><i class="fa fa-cogs" style="font-size:150%;">
 							</i></a>
 							  <ul>
-								  <li><a href="userpage_want?id=<?php echo h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
+								  <li><a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
 								  <li><a href="mypage_edit" class="menu_li">Setting</a></li>
 								  <li><a href="logout.php" class="menu_li">Logout</a></li>
 							  </ul>
@@ -155,8 +119,8 @@
 					</div>
 				
 					<div id="user_img_icon">
-						<a href="userpage_want?id=<?php echo h($_SESSION['me']['id']); ?>"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;">
-						    <img src="<?php echo h($prof['picture']); ?>"/>
+						<a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;">
+						    <img src="<?= h($prof['picture']); ?>"/>
 						</div></a>
 					</div>
 				
@@ -180,7 +144,7 @@
 			<div id="contents_wrapper" >
 				<div id="contents_left_block">
 					<div id="title_label">
-						<span id="title_label_h2"><?php echo h($contents_q['type']); ?></span>	
+						<span id="title_label_h2"><?= h($contents_q['type']); ?></span>	
 					</div>
 				<?php
 					//contnets_q user get
@@ -191,52 +155,52 @@
 					<div class="contents_opacity_wrapper2">
 						<div class="want_btn_wrapper2">
 							<form name="like" method="post" action="" class="want_btn2 like_form">			        		
-								<input type="hidden" value="<?php echo $contents_q['id']; ?>" name="contents2">
+								<input type="hidden" value="<?= $contents_q['id']; ?>" name="contents2">
 								<?php
 									$like = $dbh->prepare("select id from likes where like_user_id=:me AND like_contents_id=:request");
 									$like->execute(array(":me"=>$_SESSION['me']['id'],":request"=>$contents_q['id']));
 									$likes = $like->fetch();
 								if(empty($likes)) {
 								?>
-								<input type="image" id="<?php echo $contents_q['id']; ?>" src="img/want_btn_before.png" style="border:0;">
+								<input type="image" id="<?= $contents_q['id']; ?>" src="img/want_btn_before.png" style="border:0;">
 								<?php } else { ?>
-								<input type="image" id="<?php echo $contents_q['id']; ?>" src="img/want_btn_after.png" style="border:0;">
+								<input type="image" id="<?= $contents_q['id']; ?>" src="img/want_btn_after.png" style="border:0;">
 								<?php } ?>
 							</form> 
 						</div>
 						<div id="contents_img">
-							<img src="<?php echo h($contents_q['picture']); ?>" style="width:100%;"/>
+							<img src="<?= h($contents_q['picture']); ?>" style="width:100%;"/>
 						</div><!--#contents_img-->
 					</div><!--contents_opacity_wrapper-->
 					<div id="contents_user_info">
 						<div id="post_user_img">
-							<a href="userpage_want?id=<?php echo h($post_user['id']); ?>"><img src="<?php echo h($post_user['picture']); ?>"  style="width:40px; height:40px;"/></a>
+							<a href="userpage_want?id=<?= h($post_user['id']); ?>"><img src="<?= h($post_user['picture']); ?>"  style="width:40px; height:40px;"/></a>
 						</div>
 						<div id="post_user_name">
-							<a href="userpage_want?id=<?php echo h($post_user['id']); ?>"><span id="post_user_name1"><?php echo h($post_user['name']); ?></span></a>
+							<a href="userpage_want?id=<?= h($post_user['id']); ?>"><span id="post_user_name1"><?= h($post_user['name']); ?></span></a>
 						</div><!--post_user_name-->
 					</div><!--contents_user_info-->
 					<div id="contents_info">
 						<div id="contents_info_wrapper">
-							<span><i class="icon-shop" style="color:#2ecc71;"></i><?php echo h($contents_q['category']); ?></span>
+							<span><i class="icon-shop" style="color:#2ecc71;"></i><?= h($contents_q['category']); ?></span>
 							<span>&nbsp;</span>
-							<span><i class="icon-clock" style="color:#9b59b6;"></i><?= getTime($contents_q['created']); ?></span>
+							<span><i class="icon-clock" style="color:#9b59b6;"></i><?= $func->getTime($contents_q['created']); ?></span>
 							<span>&nbsp;</span>
-							<span><i class="fa fa-heart" style="color:red;"></i> <span id="<?php echo "change". h($contents_q['id']); ?>"><?php echo h($contents_q['likes']); ?></span></span>
+							<span><i class="fa fa-heart" style="color:red;"></i> <span id="<?= "change". h($contents_q['id']); ?>"><?= h($contents_q['likes']); ?></span></span>
 						</div><!--contents_info_wrapper-->
 					</div><!--contents_info-->
 					<div id="contents_exp">
-						<span id="exp"><?php echo h($contents_q['caption']); ?></span>
+						<span id="exp"><?= h($contents_q['caption']); ?></span>
 					</div><!--contents_exp-->
 				<?php
 				$url = (empty($_SERVER["HTTPS"]) ? "http://" : "https://") . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
 				?>
 					<div id="social_share_button_wrapper">
 						<div id="social_share_button">
-							<a href="http://www.facebook.com/sharer.php?u=<?php echo h($url); ?>&amp;t=Liry.me" rel="nofollow" target="_blank">
+							<a href="http://www.facebook.com/sharer.php?u=<?= h($url); ?>&amp;t=Liry.me" rel="nofollow" target="_blank">
 								<img alt="Share-icon-facebook" src="img/facebook.png" id="facebook_btn">
 							</a>
-							<a href="https://twitter.com/share" data-lang="ja" data-size=""  data-url="<?php echo h($url); ?>" data-related="Liry_me" data-text="Help me!! /Liry">
+							<a href="https://twitter.com/share" data-lang="ja" data-size=""  data-url="<?= h($url); ?>" data-related="Liry_me" data-text="Help me!! /Liry">
 								<img alt="Share-icon-twitter" src="img/twitter.png" id="twitter_btn">
 							</a>
 						</div>
@@ -248,8 +212,8 @@
 						<a href="#div787" rel="leanModal" id="img_search_btn">Add Find</a>
 						<div id="div787">
 							<h2 id="modal_title">File Upload</h2>
-							<a href="find_add?id=<?php echo h($_REQUEST['id']); ?>" class="modal_url_upload_btn" style="color:#ffffff;">URLからアップロード</a>
-							<a href="folder_upload?id=<?php echo h($_REQUEST['id']); ?>" class="modal_folder_upload_btn" style="color:#ffffff;">フォルダからアップロード</a>
+							<a href="find_add?id=<?= h($_REQUEST['id']); ?>" class="modal_url_upload_btn" style="color:#ffffff;">URLからアップロード</a>
+							<a href="folder_upload?id=<?= h($_REQUEST['id']); ?>" class="modal_folder_upload_btn" style="color:#ffffff;">フォルダからアップロード</a>
 						</div>
 					</div>
 					<div id="post_items_wrapper">
@@ -267,35 +231,35 @@
 							<div class="post_item_left">
 								<div class="post_item_img_wrapper">
 									<div class="post_item_img">
-										<img src="<?php echo h($contents_f['picture']); ?>" style="width:200px;"/>
+										<img src="<?= h($contents_f['picture']); ?>" style="width:200px;"/>
 									</div>
 								</div><!--post_item_img_wrapper-->
 								<div class="post_item_user_info">
 									<div class="post_item_user_img" >
-										<img src="<?php echo h($user_data1['picture']); ?>" style="width:40px; height:40px;" />
+										<img src="<?= h($user_data1['picture']); ?>" style="width:40px; height:40px;" />
 									</div>
 									<div class="post_item_user_name">
-										<span><?php echo h($user_data1['name']); ?></span>
+										<span><?= h($user_data1['name']); ?></span>
 									</div>
 								</div><!--post_item_user_info-->
 								<div class="buy_list_btn_wrapper">
 									<div class="buy_list_btn_wrapper">
 										<form name="buy_list_btn_form" method="post" action="" class="buy_list_btn_form">			        		
-											<input type="hidden" value="<?php echo $contents_f['id']; ?>" name="contents3">
+											<input type="hidden" value="<?= $contents_f['id']; ?>" name="contents3">
 											<?php
 												$like1 = $dbh->prepare("select id from buy_lists where buy_list_user_id=:me AND buy_list_contents_id=:request");
 												$like1->execute(array(":me"=>$_SESSION['me']['id'],":request"=>$contents_f['id']));
 												$likes1 = $like1->fetch();
 											if(empty($likes1)) {
 											?>
-											<input type="image" id="<?php echo "i_c". h($contents_f['id']); ?>" src="img/buy_list_btn_before.png" style="border:0;" class="buy_list_btn">
+											<input type="image" id="<?= "i_c". h($contents_f['id']); ?>" src="img/buy_list_btn_before.png" style="border:0;" class="buy_list_btn">
 											<?php } else { ?>
-											<input type="image" id="<?php echo "i_c". h($contents_f['id']); ?>" src="img/buy_list_btn_after.png" style="border:0;" class="buy_list_btn" style="margin-bottom:3px;">
+											<input type="image" id="<?= "i_c". h($contents_f['id']); ?>" src="img/buy_list_btn_after.png" style="border:0;" class="buy_list_btn" style="margin-bottom:3px;">
 											<?php } ?>
 										</form> 
 										<div class="count_wrapper">	
 											<span class="buy_list_count" style="font-family: Viga, sans-serif; color:#737373; font-size:110%;"><i class="fa fa-bookmark" style="font-size:130%;color:#2F99A4;"></i>
-											<span id="<?php echo "change2". h($contents_f['id']); ?>"><?php echo h($contents_f['buylist_count']); ?></span></span>
+											<span id="<?= "change2". h($contents_f['id']); ?>"><?= h($contents_f['buylist_count']); ?></span></span>
 										</div>
 									</div><!--buy_list_btn_wrapper-->
 								</div><!--buy_list_btn_wrapper-->
@@ -306,16 +270,16 @@
 										$url = $contents_f['url_link'];
 										$title = $contents_f['title'];
 									?>
-									<h2><?php echo mb_strimwidth("$title", 0, 50, "..."); ?></h2>
+									<h2><?= mb_strimwidth("$title", 0, 50, "..."); ?></h2>
 								</div><!--post_item_title-->
 								<div class="post_item_url_link">
-									<h3><a href="<?php echo h($url); ?>" style="color:#2C5379;"><?php echo mb_strimwidth("$url", 0, 30, "..."); ?></a></h3>
+									<h3><a href="<?= h($url); ?>" style="color:#2C5379;"><?= mb_strimwidth("$url", 0, 30, "..."); ?></a></h3>
 								</div>
 								<div class="post_item_price">
-									<span><i class="fa fa-cny"></i><?php echo h($contents_f['price']); ?></span>
+									<span><i class="fa fa-cny"></i><?= h($contents_f['price']); ?></span>
 								</div>
 								<div class="buy_btn_wrapper">
-									<a href="<?php echo h($contents_f['url_link']); ?>" class="buy_btn" style="color:#ffffff;">Buy</a>
+									<a href="<?= h($contents_f['url_link']); ?>" class="buy_btn" style="color:#ffffff;">Buy</a>
 								</div>
 								<div class="post_item_social_btn_wrapper">
 									<img src="img/fb_share_btn2.png" style="float:left margin-right:3px; height:28px;">
@@ -323,7 +287,7 @@
 								</div>
 								<div class="post_item_comment_wrapper">
 									<form method="post" action="" id="comment-form" enctype="multipart/form-data">
-										<input type="hidden" value="<?php echo h($contents_f['id']); ?>" name="c_ajax">
+										<input type="hidden" value="<?= h($contents_f['id']); ?>" name="c_ajax">
 										<input type="text" name="comment_text" class="comment_form" id="get_area" placeholder="comment......">
 										<input type="image" value="POST" src="img/post_btn.png" class="item_comment_btn">
 									</form>
@@ -342,17 +306,17 @@
 								<div class="item_comments_wrapper">
 									<div class="item_comments_container">
 										<div class="comment_user_img" >
-											<img src="<?php echo h($comment_user1['picture']); ?>" style="width:35px; height:35px;"/>
+											<img src="<?= h($comment_user1['picture']); ?>" style="width:35px; height:35px;"/>
 										</div>
 										<div class="comment_user_name">
-											<span><?php echo h($comment_user1['name']); ?></span>
+											<span><?= h($comment_user1['name']); ?></span>
 										</div>
 										<div class="comment_user_time">
-											<span><?php echo h($comments['created']); ?></span>
+											<span><?= h($comments['created']); ?></span>
 										</div>
 									</div><!--item_comments_container-->
 									<div class="comments_text_wrapper">
-										<p style="word-break: break-all; margint-top:5px;"><?php echo h($comments['comment']); ?></p>
+										<p style="word-break: break-all; margint-top:5px;"><?= h($comments['comment']); ?></p>
 									</div>
 								</div><!--item_comments_wrapper-->
 							<?php } ?>

@@ -93,7 +93,7 @@
 								<a href="#"><i class="fa fa-cogs" style="font-size:150%;">
 							</i></a>
 								<ul>
-								  <li><a href="userpage_want?id=<?php echo h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
+								  <li><a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
 								  <li><a href="mypage_edit" class="menu_li">Setting</a></li>
 								  <li><a href="logout.php" class="menu_li">Logout</a></li>
 								</ul>
@@ -102,8 +102,8 @@
 					</div>
 				
 					<div id="user_img_icon">
-						<a href="userpage_want?id=<?php echo h($_SESSION['me']['id']); ?>"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;">
-					    <img src="<?php echo h($prof['picture']); ?>"/>
+						<a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;">
+					    <img src="<?= h($prof['picture']); ?>"/>
 						</a>
 					</div>
 				</div><!--header_signin-->
@@ -127,20 +127,20 @@
 				<div id="profile_wrapper2"> 
 					<div id="profile_img_icon">
 						<div>
-						    <img src="<?php echo h($r_prof['picture']); ?>" style="width:130px; height:130px;"/>
+						    <img src="<?= h($r_prof['picture']); ?>" style="width:130px; height:130px;"/>
 						</div>
 					</div><!--profile_img_icon-->
 					<div id="profile_user_name_wrapper">
-						<h2 id="profile_user_name"><?php echo h($r_prof['name']); ?></h2>
+						<h2 id="profile_user_name"><?= h($r_prof['name']); ?></h2>
 					</div><!--profile_user_name_wrapper-->
 					<div id="profile_user_about_wrapper">
-						<p id="profile_user_about"><?php echo h($r_prof['prof']); ?></p>
+						<p id="profile_user_about"><?= h($r_prof['prof']); ?></p>
 					</div><!--profile_user_about-->
 				</div><!--profile_wrapper2-->
 					<div id="my_items_nav_wrapper">
 						<div id="my_items_nav">
-							<a id="profile_button_want" href="userpage_want?id=<?php echo h($r_prof['id']); ?>">Want</a>
-							<a id="profile_button_post" href="userpage_post?id=<?php echo h($r_prof['id']); ?>">Post</a>
+							<a id="profile_button_want" href="userpage_want?id=<?= h($r_prof['id']); ?>">Want</a>
+							<a id="profile_button_post" href="userpage_post?id=<?= h($r_prof['id']); ?>">Post</a>
 							<a id="profile_button_tobuy-list" href="">To-Buy List</a>
 						</div>
 					</div><!--my_items_nav_wrapper-->
@@ -160,33 +160,33 @@
 						 <?php while($all_c =  $want_c->fetch(PDO::FETCH_ASSOC)) {?>
 							<li style="display:none;">
 								<div class="help_type">
-								<span class="help_type_p"><i class="fa fa-cny" style="font-size:120%;"></i><span class="price" ><?php echo h($all_c['price']); ?></span></span>
+								<span class="help_type_p"><i class="fa fa-cny" style="font-size:120%;"></i><span class="price" ><?= h($all_c['price']); ?></span></span>
 								</div>
 								<div class="contents_opacity_wrapper">
 									<div class="want_btn_wrapper">
 										<form name="like" method="post" action="" class="want_btn2 buy_list_btn_form">			        		
-											<input type="hidden" value="<?php echo $all_c['id']; ?>" name="contents3">
+											<input type="hidden" value="<?= $all_c['id']; ?>" name="contents3">
 													<?php
 													$like = $dbh->prepare("select id from buy_lists where buy_list_user_id=:me AND buy_list_contents_id=:request");
 													$like->execute(array(":me"=>$_SESSION['me']['id'],":request"=>$all_c['id']));
 													$likes = $like->fetch();
 													if(empty($likes)) {
 													?>
-											<input type="image" class="buy-btns" id="<?php echo "i_c" . h($all_c['id']); ?>" src="img/buylist_btn_hover_before.png" style="border:0;">
+											<input type="image" class="buy-btns" id="<?= "i_c" . h($all_c['id']); ?>" src="img/buylist_btn_hover_before.png" style="border:0;">
 													<?php } else { ?>
-											<input type="image" class="buy-btns" id="<?php echo "i_c" . h($all_c['id']); ?>" src="img/buylist_btn_hover_after.png" style="border:0;">
+											<input type="image" class="buy-btns" id="<?= "i_c" . h($all_c['id']); ?>" src="img/buylist_btn_hover_after.png" style="border:0;">
 												<?php } ?>
 										</form>
 									</div>
-									<img src="<?php echo h($all_c['picture']); ?>" style="width:100%; potision:relateve;" class="item_imgs">
+									<img src="<?= h($all_c['picture']); ?>" style="width:100%; potision:relateve;" class="item_imgs">
 								</div><!--contents_opacity_wrapper-->
 								<div class="title_status">
 								<?php $title = $all_c['title']; ?>
-									<h2 class="title"><a href="c_contents?id=<?php echo h($all_c['id']); ?>"><?php echo mb_strimwidth("$title", 0, 47, "..."); ?></a></h2>
+									<h2 class="title"><a href="c_contents?id=<?= h($all_c['id']); ?>"><?= mb_strimwidth("$title", 0, 47, "..."); ?></a></h2>
 								</div>
 								<div class="buy_item_wrapper_left">
 									<div class="find_want_status">
-										<span class="find_status"><span class="icon_high_set"><i class="fa fa-bookmark" style="font-size:120%;"></i></span>&nbsp;<span class="bookmark" id="<?php echo "change2" . h($all_c['id']); ?>"><?php echo h($all_c['buylist_count']); ?></span></span>
+										<span class="find_status"><span class="icon_high_set"><i class="fa fa-bookmark" style="font-size:120%;"></i></span>&nbsp;<span class="bookmark" id="<?= "change2" . h($all_c['id']); ?>"><?= h($all_c['buylist_count']); ?></span></span>
 									</div>
 								    
 								    <?php   
@@ -198,15 +198,15 @@
 									<div class="user_data">
 										<div id="user_name_wrapper">    
 										<?php $name = $prof2['name']; ?>
-											<span class="contents_user_name"><?php echo mb_strimwidth("$name", 0, 13, "..."); ?></span>
+											<span class="contents_user_name"><?= mb_strimwidth("$name", 0, 13, "..."); ?></span>
 										</div>
 										<div class="nailthum_wrapper">  
-											<img src="<?php echo h($prof2['picture']); ?>" style="width:23px; height:23px;"/>
+											<img src="<?= h($prof2['picture']); ?>" style="width:23px; height:23px;"/>
 										</div><!--nailthum_wrapper-->
 									</div><!--user_data-->
 								</div><!--buy_item_wrapper_left-->
 								<div class="buy_item_wrapper_right">
-									<a class="buy-btn" href="<?php echo h($all_c['url_link']); ?>">BUY</a>
+									<a class="buy-btn" href="<?= h($all_c['url_link']); ?>">BUY</a>
 								</div>
 							</li>      
 						<?php } ?>  

@@ -85,7 +85,7 @@ order by created desc;");
 								<a href="#"><i class="fa fa-cogs" style="font-size:150%;">
 							</i></a>
 							  <ul>
-								  <li><a href="userpage_want?id=<?php echo h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
+								  <li><a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
 								  <li><a href="mypage_edit" class="menu_li">Setting</a></li>
 								  <li><a href="logout.php" class="menu_li">Logout</a></li>
 							  </ul>
@@ -94,7 +94,7 @@ order by created desc;");
 					</div>
 					<div id="user_img_icon">
 						<a href="mypage_post"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;">
-						    <img src="<?php echo h($prof['picture']); ?>"/>
+						    <img src="<?= h($prof['picture']); ?>"/>
 						</a>
 					</div>
 				</div><!--header_signin-->
@@ -117,20 +117,20 @@ order by created desc;");
 			<div id="profile_wrapper1">
 				<div id="profile_wrapper2"> 
 					<div id="profile_img_icon">
-					    <img src="<?php echo h($r_prof['picture']); ?>" style="width:130px; height:130px"; />
+					    <img src="<?= h($r_prof['picture']); ?>" style="width:130px; height:130px"; />
 					</div><!--profile_img_icon-->
 					<div id="profile_user_name_wrapper">
-						<h2 id="profile_user_name"><?php echo h($r_prof['name']); ?></h2>
+						<h2 id="profile_user_name"><?= h($r_prof['name']); ?></h2>
 					</div><!--profile_user_name_wrapper-->
 					<div id="profile_user_about_wrapper">
-						<p id="profile_user_about"><?php echo h($r_prof['prof']); ?></p>	
+						<p id="profile_user_about"><?= h($r_prof['prof']); ?></p>	
 					</div><!--profile_user_about-->
 				</div><!--profile_wrapper2-->
 				<div id="my_items_nav_wrapper">
 					<div id="my_items_nav">
 						<a id="profile_button_want" href="">Want</a>
-						<a id="profile_button_post" href="userpage_post?id=<?php echo h($r_prof['id']); ?>">Post</a>
-						<a id="profile_button_tobuy-list" href="userpage_to-buylist?id=<?php echo h($r_prof['id']); ?>">To-Buy List</a>
+						<a id="profile_button_post" href="userpage_post?id=<?= h($r_prof['id']); ?>">Post</a>
+						<a id="profile_button_tobuy-list" href="userpage_to-buylist?id=<?= h($r_prof['id']); ?>">To-Buy List</a>
 					</div>
 				</div><!--my_items_nav_wrapper-->
 			</div><!--profile_wrapper1-->
@@ -150,25 +150,25 @@ order by created desc;");
 							     <div class="contents_opacity_wrapper">
 								     <div class="want_btn_wrapper">
 									     <form name="like" method="post" action="" class="want_btn2 like_form">			        		
-											<input type="hidden" value="<?php echo $all_c['id']; ?>" name="contents2">
+											<input type="hidden" value="<?= $all_c['id']; ?>" name="contents2">
 											<?php
 												$like = $dbh->prepare("select id from likes where like_user_id=:me AND like_contents_id=:request");
 												$like->execute(array(":me"=>$_SESSION['me']['id'],":request"=>$all_c['id']));
 												$likes = $like->fetch();
 											if(empty($likes)) {
 											?>
-											<input type="image" id=<?php echo $all_c['id']; ?> src="img/want_btn_before.png" style="border:0;">
+											<input type="image" id=<?= $all_c['id']; ?> src="img/want_btn_before.png" style="border:0;">
 											<?php } else { ?>
-											<input type="image" id=<?php echo $all_c['id']; ?> src="img/want_btn_after.png" style="border:0;">
+											<input type="image" id=<?= $all_c['id']; ?> src="img/want_btn_after.png" style="border:0;">
 											<?php } ?>
 										</form>
 								 </div>
-							     <a href="contents?id=<?php echo h($all_c['id'])?>"><img src="<?php echo h($all_c['picture']); ?>" style="width:100%; potision:relateve;" class="item_imgs"></a>
-							    <div class="help_type"><span class="help_type_p"><?php echo h($all_c['type']); ?></span></div>
+							     <a href="contents?id=<?= h($all_c['id'])?>"><img src="<?= h($all_c['picture']); ?>" style="width:100%; potision:relateve;" class="item_imgs"></a>
+							    <div class="help_type"><span class="help_type_p"><?= h($all_c['type']); ?></span></div>
 							    </div><!--contents_opacity_wrapper-->
 							    <div class="find_want_status">
-								    <span class="find_status"><span class="icon_high_set"><i class="icon-crown" style="color:#bdc3c7;font-size:120%;"></i></span><?php echo h($all_c['finds']); ?></span>
-								    <span class="want_status"><i class="icon-heart-1" style="color:#bdc3c7"></i><span id="<?php echo "change". h($all_c['id']); ?>"><?php echo h($all_c['likes']); ?></span></span>
+								    <span class="find_status"><span class="icon_high_set"><i class="icon-crown" style="color:#bdc3c7;font-size:120%;"></i></span><?= h($all_c['finds']); ?></span>
+								    <span class="want_status"><i class="icon-heart-1" style="color:#bdc3c7"></i><span id="<?= "change". h($all_c['id']); ?>"><?= h($all_c['likes']); ?></span></span>
 							    </div>
 								<?php
 									//prof get
@@ -178,10 +178,10 @@ order by created desc;");
 								?>
 							    <div class="user_data">
 									<div class="nailthum_wrapper">  
-										<img src="<?php echo h($prof2['picture']); ?>" style="width:23px; height:23px;"/>
+										<img src="<?= h($prof2['picture']); ?>" style="width:23px; height:23px;"/>
 									</div><!--nailthum_wrapper-->
 									<div id="user_name_wrapper">    
-										<span class="contents_user_name"><?php echo h($prof2['name']); ?></span>
+										<span class="contents_user_name"><?= h($prof2['name']); ?></span>
 									</div>
 							    </div><!--user_data-->
 						    </li>     

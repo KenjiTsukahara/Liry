@@ -1,5 +1,6 @@
 <?php 
 	include 'common.php';
+	include 'function.php';
     
      //session prof get
     $stmt = $dbh->prepare("select picture, name from user_data where id=:request");
@@ -9,36 +10,14 @@
     
 	//judge erorr
 	
-	
 	if(!empty($_POST['f_img']) || !empty($_FILES['f_img']['name'])) {
 	
 		$str = mb_convert_kana($_POST['f_price'], "n", "UTF-8");
 		$str2 = mb_convert_kana($_POST['f_title'], "as", "UTF-8");
 		
 		$currency = $_POST['f_currency'];
-	
-		$usd = json_decode(file_get_contents('http://api.aoikujira.com/kawase/json/usd'));
-		$gbp = json_decode(file_get_contents('http://api.aoikujira.com/kawase/json/gbp'));
-		$eur = json_decode(file_get_contents('http://api.aoikujira.com/kawase/json/eur'));
 		
-		$arr_usd = (array)$usd;
-		$arr_gbp = (array)$gbp;
-		$arr_eur = (array)$eur;
-	
-		switch ($currency) {
-		  case 1:
-		    $price_in = $str;
-		    break;
-		  case 2:
-		    $price_in = $arr_usd['JPY'] * $str;
-		    break;
-		   case 3:
-		    $price_in = $arr_gbp['JPY'] * $str;
-		    break;
-		  case 4:
-		    $price_in = $arr_eur['JPY'] * $str;
-		    break;
-		}
+		$price_in = $func->ConvertCurrency($currency,$str);
 
 
 		if(!empty($_POST['key'])) {

@@ -133,9 +133,9 @@
 		       </form>
 		    </div><!--regist_text-->
 		    <?php if(!empty($error1)) { ?>
-		    <p id="regist_error"><?php echo h($error1); ?></p>
+		    <p id="regist_error"><?= h($error1); ?></p>
 		    <?php } else if(!empty($error2)) { ?>
-		    <p id="regist_error"><?php echo h($error2); ?></p>
+		    <p id="regist_error"><?= h($error2); ?></p>
 		    <?php } ?>
 	</div><!--regist_email_wrapper-->
 </div><!--regist_email_container-->

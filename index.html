@@ -76,7 +76,7 @@
 								<a href="#"><i class="fa fa-cogs" style="font-size:150%;">
 							</i></a>
 							  <ul>
-								  <li><a href="userpage_want?id=<?php echo h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
+								  <li><a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
 								  <li><a href="mypage_edit" class="menu_li">Setting</a></li>
 								  <li><a href="logout.php" class="menu_li">Logout</a></li>
 							  </ul>
@@ -84,8 +84,8 @@
 						</ul>
 					</div>
 					<div id="user_img_icon">
-						<a href="userpage_want?id=<?php echo h($_SESSION['me']['id']); ?>"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;">
-					    <img src="<?php echo h($header_prof['picture']); ?>"/>
+						<a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;">
+					    <img src="<?= h($header_prof['picture']); ?>"/>
 						</a>
 					</div>
 				</div><!--header_signin-->
@@ -112,29 +112,29 @@
 						<?php $num = 0; ?>
 						<?php for($i = 0 ; $i <= 19 ; $i++) { ?>
 							<li style="display:none;">
-								<a href="contents?id=<?php echo $latest_c[$num]['id']; ?>">
+								<a href="contents?id=<?= $latest_c[$num]['id']; ?>">
 									<div class="contents_opacity_wrapper">
 										<div class="want_btn_wrapper">
 											<form name="like" method="post" action="" class="want_btn2 like_form">			        		
-												<input type="hidden" value="<?php echo $latest_c[$num]['id']; ?>" name="contents2">
+												<input type="hidden" value="<?= $latest_c[$num]['id']; ?>" name="contents2">
 												<?php
 												$like = $dbh->prepare("select id from likes where like_user_id=:me AND like_contents_id=:request");
 												$like->execute(array(":me"=>$_SESSION['me']['id'],":request"=>$latest_c[$num]['id']));
 												$likes = $like->fetch();
 												if(empty($likes)) {
 												?>
-												<input type="image" id=<?php echo $latest_c[$num]['id']; ?> src="img/want_btn_before.png" style="border:0;">
+												<input type="image" id=<?= $latest_c[$num]['id']; ?> src="img/want_btn_before.png" style="border:0;">
 												<?php } else { ?>
-												<input type="image" id=<?php echo $latest_c[$num]['id']; ?> src="img/want_btn_after.png" style="border:0;">
+												<input type="image" id=<?= $latest_c[$num]['id']; ?> src="img/want_btn_after.png" style="border:0;">
 											<?php } ?>
 											</form>
 										</div>
-										<img src="<?php echo h($latest_c[$num]['picture']); ?>" style="width:100%; potision:relateve;" class="item_imgs scroll">
-										<div class="help_type"><span class="help_type_p"><?php echo h($latest_c[$num]['type']); ?></span></div>
+										<img src="<?= h($latest_c[$num]['picture']); ?>" style="width:100%; potision:relateve;" class="item_imgs scroll">
+										<div class="help_type"><span class="help_type_p"><?= h($latest_c[$num]['type']); ?></span></div>
 									</div><!--contents_opacity_wrapper-->
 									<div class="find_want_status">
-										<span class="find_status"><span class="icon_high_set"><i class="icon-crown" style="color:#bdc3c7;font-size:120%;"></i></span><?php echo h($latest_c[$num]['finds']); ?></span>
-										<span class="want_status"><i class="icon-heart-1" style="color:#bdc3c7"></i><span id="<?php echo "change". h($latest_c[$num]['id']); ?>"><?php echo h($latest_c[$num]['likes']); ?></span></span>
+										<span class="find_status"><span class="icon_high_set"><i class="icon-crown" style="color:#bdc3c7;font-size:120%;"></i></span><?= h($latest_c[$num]['finds']); ?></span>
+										<span class="want_status"><i class="icon-heart-1" style="color:#bdc3c7"></i><span id="<?= "change". h($latest_c[$num]['id']); ?>"><?= h($latest_c[$num]['likes']); ?></span></span>
 									</div>
 								</a>
 								<?php
@@ -143,14 +143,14 @@
 								$stmt->execute(array(":request"=>$latest_c[$num]['user_id']));
 								$prof = $stmt->fetch();
 								?>  
-								<a href="userpage_want?id=<?php echo h($prof['id']); ?>">
+								<a href="userpage_want?id=<?= h($prof['id']); ?>">
 									<div class="user_data">
 										<div class="nailthum_wrapper">  
-											<img src="<?php echo h($prof['picture']); ?>"style='width:23px; height:23px;'/>
+											<img src="<?= h($prof['picture']); ?>"style='width:23px; height:23px;'/>
 										</div><!--nailthum_wrapper-->
 										
 										<div id="user_name_wrapper">    
-											<span class="contents_user_name"><?php echo h($prof['name']); ?></span>
+											<span class="contents_user_name"><?= h($prof['name']); ?></span>
 										</div>
 									</div>
 								</a>	

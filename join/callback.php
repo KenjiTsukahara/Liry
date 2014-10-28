@@ -34,7 +34,7 @@ if (! isset($_GET['oauth_verifier'])) {
     
     $me = $cb->account_verifyCredentials();
     
-    // データベースに格納
+    // insert detabase
     
     try {
         $dbh = new PDO(DSN, DB_USER, DB_PASSWORD);
