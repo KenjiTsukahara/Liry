@@ -23,7 +23,7 @@
 		    $get_data2 = $stmt->fetch();
 	    
 	    
-	    // セッションハイジャック対策
+	    // session hijack measure
 	        session_regenerate_id(true);
 	        $_SESSION['me'] = $get_data2;
 	
@@ -68,7 +68,7 @@
 			
 				$num = mt_rand(0,2147483647);
 			
-				//user_dataに挿入
+				//insert database
 				$sql = "insert into user_data 
 				(user_id, name, email, picture, login_sns, created, modified) 
 				values 
@@ -107,9 +107,9 @@
 				  
 			}
 			
-			// ログイン処理
+			// process login
 			if (!empty($session_user_data)) {
-				// セッションハイジャック対策
+				// session hijack measure
 				session_regenerate_id(true);
 				$_SESSION['me'] = $session_user_data;
 				header('Location: ../index.html');   

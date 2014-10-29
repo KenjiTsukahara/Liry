@@ -55,134 +55,131 @@
 </head>
 <body>
 	<div id="wrapper">
-	<div id="wrap-top">
-	<header>
-		<div id="header">
-		
-			<div id="top_logo">
-				<a href="index" id="logo_link"><img src="img/LIRY_LOGO2.png" style="height:48px;"/></a>
-			</div>
-		
-			<div id="nav_search">
-				<form name="searchform2" id="searchform2" method="get" action="search_q">  
-					<input name="search_word" id="keywords2" value="" type="text" placeholder="Search" style="color:#333333;"/>  
-					<input type="image" src="img/btn2.gif" alt="検索" id="searchBtn2" />  
-				</form>
-			</div>
-		
-			<div id="header_signin">
-				<div id="dropdown_menu">
-					<ul id="menu">
-						<li style="margin-top:5px; margin-left:5px;">
-						<a href="#"><i class="fa fa-cogs" style="font-size:150%;">
-						</i></a>
-						  <ul>
-							  <li><a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
-							  <li><a href="mypage_edit" class="menu_li">Setting</a></li>
-							  <li><a href="logout.php" class="menu_li">Logout</a></li>
-						  </ul>
-						</li>
-					</ul>
+		<div id="wrap-top">
+			<header>
+				<div id="header">
+				
+					<div id="top_logo">
+						<a href="index" id="logo_link"><img src="img/LIRY_LOGO2.png" style="height:48px;"/></a>
+					</div>
+				
+					<div id="nav_search">
+						<form name="searchform2" id="searchform2" method="get" action="search_q">  
+							<input name="search_word" id="keywords2" value="" type="text" placeholder="Search" style="color:#333333;"/>  
+							<input type="image" src="img/btn2.gif" alt="検索" id="searchBtn2" />  
+						</form>
+					</div>
+				
+					<div id="header_signin">
+						<div id="dropdown_menu">
+							<ul id="menu">
+								<li style="margin-top:5px; margin-left:5px;">
+								<a href="#"><i class="fa fa-cogs" style="font-size:150%;">
+								</i></a>
+								  <ul>
+									  <li><a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
+									  <li><a href="mypage_edit" class="menu_li">Setting</a></li>
+									  <li><a href="logout.php" class="menu_li">Logout</a></li>
+								  </ul>
+								</li>
+							</ul>
+						</div>
+					
+					<div id="user_img_icon">
+						<a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;">
+						    <img src="<?= h($prof['picture']); ?>"/>
+						</div></a>
+					</div>
+					
+					</div><!--header_signin-->
+				
+				
 				</div>
-			
-			<div id="user_img_icon">
-				<a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;">
-				    <img src="<?= h($prof['picture']); ?>"/>
-				</div></a>
-			</div>
-			
-			</div><!--header_signin-->
-		
-		
-		</div>
-	</header>
-	<div id="header2">
-		<div id="header2_wrapper">
-			<div id="header2_nav">
-				<a id="nav_btn_latest" href="index">Latest</a><a id="nav_btn_help" href="help">Help!</a><a id="nav_btn_popular" href="popular">Popular</a><a id="button_example" href="">POST<i class="fa fa-camera" style="margin-left:3px;"></i></a>
-			</div>
-		</div>
-	</div>
-	</div><!--wrap-top-->
-	
-	
-	<div id="qa_post_img_wrapper">
-	
-		<div id="qa_post_img_title">
-			<p>Folder Upload</p>
-		</div>
-		<div id="qa_post_img_container">
-			<label for="img_up_fileup">
-				<div id="img_thum_before">
-					<p id="no_image">CLICK HERE</p>
+			</header>
+			<div id="header2">
+				<div id="header2_wrapper">
+					<div id="header2_nav">
+						<a id="nav_btn_latest" href="index">Latest</a><a id="nav_btn_help" href="help">Help!</a><a id="nav_btn_popular" href="popular">Popular</a><a id="button_example" href="">POST<i class="fa fa-camera" style="margin-left:3px;"></i></a>
+					</div>
 				</div>
-			</label>
-			<div id="qa_post_img_up">
-				<form action="" enctype="multipart/form-data" method="post" name="post" id="hoge">
-				<input name="key" id="" value="from folder" type="hidden"/>
-				<input name="f_contents_id" id="" value="<?= h($_REQUEST['id']); ?>" type="hidden"/> 
-						<input type="hidden" name="item_post" value="on"/>
-					<div id="file_upload">
-						<input type="file" name="f_img" id="img_up_fileup" >
-					</div><!--file_upload-->
-					<div id="other_forms">
-						<input type="text" name="f_title" id="post_url_title" placeholder="Title" class="validate[required]">
-						<input type="text" name="f_price" id="post_url_price" placeholder="Price" class="validate[required,custom[number]">
-						<input type="text" name="f_url" id="post_url_url" placeholder="URL"class="validate[required,custom[url]]">
-						<select name="f_currency" id="post_url_form_currency">
-							<option value=1>￥</option>
-							<option value=2>$</option>
-							<option value=3>£</option>
-							<option value=4>€</option>
-							</select>
-							<select name="f_category" id="post_url_form_category">
-								<option value="">Category</option>
-								<option value="bag" >bag</option>
-								<option value="belt" >belt</option>
-								<option value="blouse" >blouse</option>
-								<option value="coat" >coat</option>
-								<option value="dress" >dress</option>
-								<option value="hat" >hat</option>
-								<option value="jacket" >jacket</option>
-								<option value="jeans" >jeans</option>
-								<option value="jewels" >jewels</option>
-								<option value="nail polish" >nail polish</option>
-								<option value="pants" >pants</option>
-								<option value="scarf" >scarf</option>
-								<option value="shirt" >shirt</option>
-								<option value="shoes" >shoes</option>
-								<option value="shorts" >shorts</option>
-								<option value="skirt" >skirt</option>
-								<option value="sunglasses" >sunglasses</option>
-								<option value="sweater" >sweater</option>
-								<option value="swim wear" >swim wear</option>
-								<option value="t-shirt" >t-shirt</option>
-								<option value="tank top" >tank top</option>
-								<option value="underwear" >underwear</option>
-								<option value="others" >others</option>
-							</select>
-							<select name="f_gender" id="post_url_form_color">
-								<option value="">Gender</option>
-								<option value="Lady">Lady</option>
-								<option value="Boy">Boy</option>
-							</select>
-	
-						<input type="submit" id="post_url_form_submit" value="POST">
-					</div><!--other_forms-->
-				</form>
-			</div><!--qa_post_img_up-->
-		</div><!--qa_post_img_container-->
-	
-		<div id="erorr_wrapper">
-			<div id="erorr">
-				<?php if($erorr == 'type') { ?>
-				<p>ファイルの拡張子が無効です</p>
-				<?php } elseif ($erorr == 'empty') { ?>
-				<p>入力されていない項目があります</p>
-				<?php } ?>
 			</div>
-		</div>
-	</div><!--qa_post_img_wrapper-->
+		</div><!--wrap-top-->
+	
+	
+		<div id="qa_post_img_wrapper">
+			<div id="qa_post_img_title">
+				<p>Folder Upload</p>
+			</div>
+			<div id="qa_post_img_container">
+				<label for="img_up_fileup">
+					<div id="img_thum_before">
+						<p id="no_image">CLICK HERE</p>
+					</div>
+				</label>
+				<div id="qa_post_img_up">
+					<form action="" enctype="multipart/form-data" method="post" name="post" id="hoge">
+					<input name="key" id="" value="from folder" type="hidden"/>
+					<input name="f_contents_id" id="" value="<?= h($_REQUEST['id']); ?>" type="hidden"/> 
+							<input type="hidden" name="item_post" value="on"/>
+						<div id="file_upload">
+							<input type="file" name="f_img" id="img_up_fileup" >
+						</div><!--file_upload-->
+						<div id="other_forms">
+							<input type="text" name="f_title" id="post_url_title" placeholder="Title" class="validate[required]">
+							<input type="text" name="f_price" id="post_url_price" placeholder="Price" class="validate[required,custom[number]">
+							<input type="text" name="f_url" id="post_url_url" placeholder="URL"class="validate[required,custom[url]]">
+							<select name="f_currency" id="post_url_form_currency">
+								<option value=1>￥</option>
+								<option value=2>$</option>
+								<option value=3>£</option>
+								<option value=4>€</option>
+								</select>
+								<select name="f_category" id="post_url_form_category">
+									<option value="">Category</option>
+									<option value="bag" >bag</option>
+									<option value="belt" >belt</option>
+									<option value="blouse" >blouse</option>
+									<option value="coat" >coat</option>
+									<option value="dress" >dress</option>
+									<option value="hat" >hat</option>
+									<option value="jacket" >jacket</option>
+									<option value="jeans" >jeans</option>
+									<option value="jewels" >jewels</option>
+									<option value="nail polish" >nail polish</option>
+									<option value="pants" >pants</option>
+									<option value="scarf" >scarf</option>
+									<option value="shirt" >shirt</option>
+									<option value="shoes" >shoes</option>
+									<option value="shorts" >shorts</option>
+									<option value="skirt" >skirt</option>
+									<option value="sunglasses" >sunglasses</option>
+									<option value="sweater" >sweater</option>
+									<option value="swim wear" >swim wear</option>
+									<option value="t-shirt" >t-shirt</option>
+									<option value="tank top" >tank top</option>
+									<option value="underwear" >underwear</option>
+									<option value="others" >others</option>
+								</select>
+								<select name="f_gender" id="post_url_form_color">
+									<option value="">Gender</option>
+									<option value="Lady">Lady</option>
+									<option value="Boy">Boy</option>
+								</select>
+							<input type="submit" id="post_url_form_submit" value="POST">
+						</div><!--other_forms-->
+					</form>
+				</div><!--qa_post_img_up-->
+			</div><!--qa_post_img_container-->
+			<div id="erorr_wrapper">
+				<div id="erorr">
+					<?php if($erorr == 'type') { ?>
+					<p>ファイルの拡張子が無効です</p>
+					<?php } elseif ($erorr == 'empty') { ?>
+					<p>入力されていない項目があります</p>
+					<?php } ?>
+				</div>
+			</div>
+		</div><!--qa_post_img_wrapper-->
 	</div>
 
 
@@ -224,7 +221,6 @@
 		$('.nailthumb-container').nailthumb({width:40,height:40,method:'crop',fitDirection:'top'});
 		$('.nailthumb-container').nailthumb({width:40,height:40,method:'crop',fitDirection:'top'});
 	
-			
 		});
 	</script>
 	<script>
@@ -239,7 +235,6 @@
 				      $('span').html('');
 				      return;
 				    }
-			    
 			    // image preview
 			    var reader = new FileReader();
 			    reader.onload = function() {
@@ -249,7 +244,6 @@
 			    reader.readAsDataURL(file);
 			  });
 		});
-		
 	</script>
 	<script>
 		

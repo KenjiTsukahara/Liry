@@ -75,7 +75,7 @@ if (! isset($_GET['oauth_verifier'])) {
         $stmt->execute($params);
         
         
-        //usersのデータベースに挿入
+        //insert database
         $sql = "insert into user_data 
                 (user_id, name, picture, prof, login_sns, created, modified) 
                 values 
@@ -97,10 +97,10 @@ if (! isset($_GET['oauth_verifier'])) {
         $user = $dbin->fetch();    
     }
     
-    // ログイン処理
+    // process login
     if (!empty($user)) {
     
-        // セッションハイジャック対策
+        // session hijack measure
         session_regenerate_id(true);
         $_SESSION['me'] = $user;
         

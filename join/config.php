@@ -6,6 +6,7 @@
 	define('CONSUMER_KEY', '');
 	define('CONSUMER_SECRET', '');
 	define('SITE_URL', '');
+	
 	//facebook
 	define('APP_ID','');
 	define('APP_SECRET','');

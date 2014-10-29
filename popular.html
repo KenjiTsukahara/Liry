@@ -182,7 +182,6 @@
 	<script>
 		$(function(){
 			$(document).on('submit','form.like_form', function() {
-			// $("form.like_form").submit(function(event) {
 				 event.preventDefault();
 			var val = $(this).children("input[name='contents2']").val();
 			   $.ajax({

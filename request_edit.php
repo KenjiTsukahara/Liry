@@ -2,7 +2,7 @@
 
 	include 'common.php';
 
-	//error判定
+	//judge error
 	if(!empty($_POST['post'])) {
 	
 		$fileName = $_FILES['img']['name'];

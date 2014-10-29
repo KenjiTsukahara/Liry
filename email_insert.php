@@ -21,7 +21,7 @@
 	    
 	    }
     
-    //重複error
+    //dupulicate error
 	    $stmt = $dbh->prepare("select email from user_data where email=:request");
 	    $stmt->execute(array(":request"=>$get_mails));
 	    $dub_mail = $stmt->fetch();
