@@ -267,49 +267,43 @@
 </script>
 <script>
 	$(function(){
-	
-	 $("form.buy_list_btn_form").submit(function(event) {
-		 event.preventDefault();
-	var val = $(this).children("input[name='contents3']").val();
-	
-	   $.ajax({
-	    type: 'POST',
-	    url: 'buy_list_btn.php',
-	    data: {"contents": val},
-	    success: function(data) {
-	    var dt = data.split(",");
-	   var imgSrc = ($("#i_c" + dt[0]).attr("src") == "img/buy_list_btn_before.png")? "img/buy_list_btn_after.png": "img/buy_list_btn_before.png";
-	   $("#i_c" + dt[0]).attr("src", imgSrc);
-	   $("span#change2" + dt[0]).text(dt[1]);
-	   alert(dt[1]);
-	    }
-	   });
-	  return false;
-	 });
+		$("form.buy_list_btn_form").submit(function(event) {
+			event.preventDefault();
+			var val = $(this).children("input[name='contents3']").val();
+			$.ajax({
+				type: 'POST',
+				url: 'buy_list_btn.php',
+				data: {"contents": val},
+				success: function(data) {
+					var dt = data.split(",");
+					var imgSrc = ($("#i_c" + dt[0]).attr("src") == "img/buy_list_btn_before.png")? "img/buy_list_btn_after.png": "img/buy_list_btn_before.png";
+					$("#i_c" + dt[0]).attr("src", imgSrc);
+					$("span#change2" + dt[0]).text(dt[1]);
+				}
+			});
+			return false;
+		});
 	});
 
 </script> 
 <script>
 	$(function(){
-	
-	 $("form#comment-form").submit(function(event) {
-		 event.preventDefault();
-	var val = $(this).children("input[name='c_ajax']").val();
-	var tiesto = document.getElementById('get_area').value;
-	   $.ajax({
-	    type: 'POST',
-	    url: 'comment.html',
-	    data: {"contents": val, 
-	    		"comments": tiesto},
-	    success: function(data) {
-	location.reload();
-	   
-	    }
-	   });
-	  return false;
-	 });
+		$("form#comment-form").submit(function(event) {
+			event.preventDefault();
+			var val = $(this).children("input[name='c_ajax']").val();
+			var tiesto = document.getElementById('get_area').value;
+			$.ajax({
+				type: 'POST',
+				url: 'comment.html',
+				data: {"contents": val, 
+				"comments": tiesto},
+				success: function(data) {
+					location.reload();
+				}
+			});
+			return false;
+		});
 	});
-
 </script> 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -319,7 +313,6 @@
 
   ga('create', 'UA-51403977-1', 'liry.me');
   ga('send', 'pageview');
-
 </script>
 </body>
 </html>

@@ -195,111 +195,91 @@
 		   var imgSrc = ($("#" + dt[0]).attr("src") == "img/want_btn_before.png")? "img/want_btn_after.png": "img/want_btn_before.png";
 		   $("#" + dt[0]).attr("src", imgSrc);
 		   $("span#change" + dt[0]).text(dt[1]);
-		   
 		    }
 		   });
 		  return false;
 		 });
 	});
-
 </script> 
 <script type="text/javascript">
-
 	$(window).load(function(){
-			$(document).ready(function() {
-			
-				$.ajax({
-					type:"POST",
-					url:"json.php",
-					data: {"popular": true},
-					success:function(msg)
-					{
-						info = msg.split(",,,,,,,,,,");
-						data_info = JSON.parse(info[1]);				
-						data2 = eval("(" + info[0] + ")");
-					}
+		$(document).ready(function() {
+			$.ajax({
+				type:"POST",
+				url:"json.php",
+				data: {"popular": true},
+				success:function(msg)
+				{
+					info = msg.split(",,,,,,,,,,");
+					data_info = JSON.parse(info[1]);				
+					data2 = eval("(" + info[0] + ")");
+				}
 			});
-		
-		
-		    var options = {
-			      autoResize: true,
-			      container: $('#main'),
-			      offset: 12,
-			      itemWidth: 250     
-		    };
-		    var handler = $('#tiles li');
-		      
-		    handler.wookmark(options);
-		     
-		       // Reinitializes the wookmark handler after all images have loaded
-		       
-		      function applyLayout() {
-		        $tiles.imagesLoaded(function() {
-		          // Destroy the old handler
-		          if ($handler.wookmarkInstance) {
-		            $handler.wookmarkInstance.clear();
-		          }
-		
-		          // Create a new layout handler.
-		          $handler = $('#tiles li', $tiles);
-		          $handler.wookmark(options);
-		        });
-		      }
-		    
-		    $(window).on("scroll" , function(e)
-		{
-			    var bottomPos = 100;
+			var options = {
+				autoResize: true,
+				container: $('#main'),
+				offset: 12,
+				itemWidth: 250     
+			};
+			var handler = $('#tiles li');
+			handler.wookmark(options);
 			
-			    var scrollHeight = $(document).height();
-			    var scrollPosition = $(window).height() + $(window).scrollTop();
+			// Reinitializes the wookmark handler after all images have loaded
+			function applyLayout() {
+				$tiles.imagesLoaded(function() {
+				
+				// Destroy the old handler
+					if ($handler.wookmarkInstance) {
+						$handler.wookmarkInstance.clear();
+					}
+					
+					// Create a new layout handler.
+					$handler = $('#tiles li', $tiles);
+					$handler.wookmark(options);
+				});
+			}
 			
-		   
-		    if (scrollPosition > scrollHeight - bottomPos)
-		    {	
-		
-		        appendFunc();
-		      
-				handler.wookmarkInstance.clear();
-				handler = $('#tiles li');
-				handler.wookmark(options);
-		    }
-		    
-		    
-		}); 
+			$(window).on("scroll" , function(e)
+			{
+				var bottomPos = 100;
+				var scrollHeight = $(document).height();
+				var scrollPosition = $(window).height() + $(window).scrollTop();
+				if (scrollPosition > scrollHeight - bottomPos)
+				{	
+					appendFunc();
+					handler.wookmarkInstance.clear();
+					handler = $('#tiles li');
+					handler.wookmark(options);
+				}
+			}); 
+			
 			var counter = 0;
-		
-			function appendFunc() {
 			
-			
-			
+			function appendFunc() {	
+						
 				var tagText = "";
-			
 				tagText = "<li><a href='contents?id=" + data2[counter]['id'] + "'><div class='contents_opacity_wrapper'><div class='want_btn_wrapper'><form name='like' method='post' action='' class='want_btn2 like_form'><input type='hidden' value='" + data2[counter]['id'] + "' name='contents2'><?php $like = $dbh->prepare('select id from likes where like_user_id=:me AND like_contents_id=:request');$like->execute(array(':me'=>$_SESSION['me']['id'],':request'=>" + data2[counter]['id'] + "));$likes = $like->fetch();if(empty($likes)) { ?><input type='image' id=" + data2[counter]['id'] + " src='img/want_btn_before.png' style='border:0;'><?php } else { ?><input type='image' id=" + data2[counter]['id'] + " src='img/want_btn_after.png' style='border:0;'><?php } ?></form></div><img src='" + data2[counter]['picture'] + "' style='width:250px;height:" + data_info[counter] + "px; potision:relateve;' class='item_imgs scroll'><div class='help_type'><span class='help_type_p'>"+ data2[counter]['type'] +"</span></div></div><div class='find_want_status'><span class='find_status'><span class='icon_high_set'><i class='icon-crown' style='color:#bdc3c7;font-size:120%;'></i></span>"+ data2[counter]['finds'] +"</span><span class='want_status'><i class='icon-heart-1' style='color:#bdc3c7'></i><span id=2>"+ data2[counter]['likes'] +"</span></span></div></a><a href='userpage_want?id=" + data2[counter]['user_id'] + "'><div class='user_data'><div class='nailthum_wrapper'><img src='" + data2[counter]['user_picture'] + "' style='width:23px; height:23px;'/></div><div id='user_name_wrapper'><span class='contents_user_name'>" + data2[counter]['user_name'] + "</span></div></div></a></li>";
 				
 				$("#tiles").append(tagText);
 				counter++;
-	
 			}
 			
-		
 		});
 	});
-</script><!--user img icon resize-->
-<script type="text/javascript">
-	$(window).load(function(){
-		$(document).ready(new function() {
-		    var options = {
-		      autoResize: true,
-		      container: $('#main'), 
-		      offset: 12, 
-		      itemWidth: 250   
-		    };
-		
-		    var handler = $('#tiles li'); 
-		      
-		    handler.wookmark(options); 
+	</script><!--user img icon resize-->
+	<script type="text/javascript">
+		$(window).load(function(){
+			$(document).ready(new function() {
+				var options = {
+					autoResize: true,
+					container: $('#main'), 
+					offset: 12, 
+					itemWidth: 250   
+				};
+				var handler = $('#tiles li'); 
+				handler.wookmark(options); 
+			});
 		});
-	});
 </script>
 <!--user img icon resize-->
 <script type="text/javascript">

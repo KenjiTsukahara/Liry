@@ -7,13 +7,14 @@ if (empty($_SESSION['me'])) {
 }
 
 	if(empty($_REQUEST['search_word'])) {
+	
 		header('Location: index.php');
 	}
+	
 	$user_search = $_REQUEST['search_word'];
 	$user_s = mb_convert_kana($user_search,"s","utf-8");
 	$not_words = array(",", "、", " ","。",".");
 	$clean_search = str_replace($not_words, ' ', $user_s);
-
 	$search_words = explode(" ", $clean_search);
 	
 	//サーチワードが複数の場合	
@@ -23,21 +24,19 @@ if (empty($_SESSION['me'])) {
 			$where_list2[] = "title collate utf8_unicode_ci LIKE '%$word%' OR";
 		}
 	
-	//$where_clause1 = implode("", $where_list1);
-	$where_clause2 = implode(" ", $where_list2);
-	$where_clause2 = substr($where_clause2, 0, -2);
-	//fashion
-	$search_fcontents = $dbh->prepare("SELECT * FROM contents_f WHERE $where_clause2 ORDER BY created DESC");
-	$search_fcontents->execute();
-	//$search_fresult = $search_fcontents->fetch();
+		$where_clause2 = implode(" ", $where_list2);
+		$where_clause2 = substr($where_clause2, 0, -2);
+		
+		//fashion
+		$search_fcontents = $dbh->prepare("SELECT * FROM contents_f WHERE $where_clause2 ORDER BY created DESC");
+		$search_fcontents->execute();
 	
 	//サーチワードが１つの場合
 	} elseif(count($search_words) == 1) {
 	
-	//var_dump($ifone);//fashion
-	$ifone = $search_words[0];
-	$search_fcontents = $dbh->prepare("SELECT * FROM contents_f WHERE title collate utf8_unicode_ci LIKE '%$ifone%'");
-	$search_fcontents->execute();
+		$ifone = $search_words[0];
+		$search_fcontents = $dbh->prepare("SELECT * FROM contents_f WHERE title collate utf8_unicode_ci LIKE '%$ifone%'");
+		$search_fcontents->execute();
 	
 	}
 
@@ -238,7 +237,6 @@ if (empty($_SESSION['me'])) {
 		      offset: 11,
 		      itemWidth: 250   
 		    };
-		
 		    var handler = $('#tiles li');
 		      
 		    handler.wookmark(options);
@@ -256,7 +254,6 @@ if (empty($_SESSION['me'])) {
 </script>
 <script>
 	$(function(){
-	
 		$("form.like_form").submit(function(event) {
 			event.preventDefault();
 			var val = $(this).children("input[name='contents2']").val();
@@ -269,7 +266,6 @@ if (empty($_SESSION['me'])) {
 					var imgSrc = ($("#" + dt[0]).attr("src") == "img/want_btn_before.png")? "img/want_btn_after.png": "img/want_btn_before.png";
 					$("#" + dt[0]).attr("src", imgSrc);
 					$("span#change" + dt[0]).text(dt[1]);
-				
 				}
 			});
 			return false;
@@ -279,7 +275,6 @@ if (empty($_SESSION['me'])) {
 </script> 
 <script>
 	$(function(){
-	
 		$("form.buy_list_btn_form").submit(function(event) {
 			event.preventDefault();
 			var val = $(this).children("input[name='contents3']").val();

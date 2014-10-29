@@ -21,13 +21,12 @@
 	$want_c = $dbh->prepare("select id, contents_id, picture, title, url_link, price ,buylist_count, user_id, created from contents_f where id in (select buy_list_contents_id from buy_lists where buy_list_user_id=:request) 
 	order by created desc;");
 	$want_c->execute(array(":request"=>$_REQUEST['id']));
-	
-	
-	
+		
 	//session prof get
 	$stmt = $dbh->prepare("select picture, name, prof from user_data where id=:request");
 	$stmt->execute(array(":request"=>$_SESSION['me']['id']));
 	$prof = $stmt->fetch();
+	
 	//session prof get
 	$stmt = $dbh->prepare("select id, picture, name, prof from user_data where id=:request");
 	$stmt->execute(array(":request"=>$_REQUEST['id']));
@@ -242,9 +241,7 @@
 		      offset: 12,
 		      itemWidth: 250   
 		    };
-		
 		    var handler = $('#tiles li');
-		      
 		    handler.wookmark(options);
 		});
 	});
@@ -260,26 +257,24 @@
 </script>
 <script>
 	$(function(){
-	
-	 $("form.like_form").submit(function(event) {
-		event.preventDefault();
-		var val = $(this).children("input[name='contents2']").val();
-	   $.ajax({
-		    type: 'POST',
-		    url: 'like.php',
-		    data: {"contents": val},
-		    success: function(data) {
-			   var dt = data.split(",");
-			   var imgSrc = ($("#" + dt[0]).attr("src") == "img/want_btn_before.png")? "img/want_btn_after.png": "img/want_btn_before.png";
-			   $("#" + dt[0]).attr("src", imgSrc);
-			   $("span#change" + dt[0]).text(dt[1]);
-		   
-		    }
-		   });
-		  return false;
-	 });
+		$("form.like_form").submit(function(event) {
+			event.preventDefault();
+			var val = $(this).children("input[name='contents2']").val();
+			$.ajax({
+				type: 'POST',
+				url: 'like.php',
+				data: {"contents": val},
+				success: function(data) {
+					var dt = data.split(",");
+					var imgSrc = ($("#" + dt[0]).attr("src") == "img/want_btn_before.png")? "img/want_btn_after.png": "img/want_btn_before.png";
+					$("#" + dt[0]).attr("src", imgSrc);
+					$("span#change" + dt[0]).text(dt[1]);
+				}
+			});
+			return false;
+		});
 	});
-
+	
 </script> 
 <script>
 	$(function(){

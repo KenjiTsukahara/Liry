@@ -168,9 +168,12 @@
 	      
 	    handler.wookmark(options);
 	});
+	
+	$('.nailthumb-container').nailthumb({width:40,height:40,method:'resize',fitDirection:'top'});
+	$("#select1").minimalect({ theme: "bubble", placeholder: "ssss" });
 </script>
-<script type="text/javascript">
-	$(document).ready(function() {
+<script>
+	$(document).ready(function () {
 		$('.nailthumb-container').nailthumb({width:40,height:40,method:'resize',fitDirection:'top'});
 		$("#select1").minimalect({ theme: "bubble", placeholder: "ssss" });
 	});
