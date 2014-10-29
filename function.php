@@ -39,7 +39,6 @@
 	    	    
     	}
     	
-    	
     
 	    //find_add.html
 		function scrape_img_urls($html) {

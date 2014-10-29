@@ -65,254 +65,253 @@
 </head>
 <body>
 
-<div id="wrapper">
-	<div id="wrap-top">
-	
-		<header>
-			<div id="header">
-				<div id="top_logo">
-					<a href="index" id="logo_link"><img src="img/LIRY_LOGO2.png" style="height:48px;"/></a>
-				</div>
-				<div id="nav_search">
-					<form name="searchform2" id="searchform2" method="get" action="search_q">  
-						<input name="search_word" id="keywords2" value="" type="text" placeholder="Search" style="color:#333333;"/>  
-						<input type="image" src="img/btn2.gif" alt="検索" id="searchBtn2" />  
-					</form>
-				</div>
-			
-				<div id="header_signin">
-					<div id="dropdown_menu">
-						<ul id="menu">
-							<li style="margin-top:5px; margin-left:5px;">
-								<a href="#"><i class="fa fa-cogs" style="font-size:150%;">
-							</i></a>
-								  <ul>
-									  <li><a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
-									  <li><a href="mypage_edit" class="menu_li">Setting</a></li>
-									  <li><a href="logout.php" class="menu_li">Logout</a></li>
-								  </ul>
-							</li>
-						</ul>
+	<div id="wrapper">
+		<div id="wrap-top">
+			<header>
+				<div id="header">
+					<div id="top_logo">
+						<a href="index" id="logo_link"><img src="img/LIRY_LOGO2.png" style="height:48px;"/></a>
 					</div>
-					<div id="user_img_icon">
-							<a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;">
-						    <img src="<?= h($prof2['picture']); ?>"/>
-						</a>
+					<div id="nav_search">
+						<form name="searchform2" id="searchform2" method="get" action="search_q">  
+							<input name="search_word" id="keywords2" value="" type="text" placeholder="Search" style="color:#333333;"/>  
+							<input type="image" src="img/btn2.gif" alt="検索" id="searchBtn2" />  
+						</form>
 					</div>
-				</div><!--header_signin-->
-			</div>
-		</header>
-	
-	
-	
-	<div id="header2">
-		<div id="header2_wrapper">
-			<div id="header2_nav">
-				<a id="nav_btn_latest" href="index">Latest</a>
-				<a id="nav_btn_help" href="help">Help!</a>
-				<a id="nav_btn_popular" href="popular">Popular</a>
-				<a id="button_example" href="post">POST<i class="fa fa-camera" style="margin-left:3px;"></i></a>
+				
+					<div id="header_signin">
+						<div id="dropdown_menu">
+							<ul id="menu">
+								<li style="margin-top:5px; margin-left:5px;">
+									<a href="#"><i class="fa fa-cogs" style="font-size:150%;">
+								</i></a>
+									  <ul>
+										  <li><a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
+										  <li><a href="mypage_edit" class="menu_li">Setting</a></li>
+										  <li><a href="logout.php" class="menu_li">Logout</a></li>
+									  </ul>
+								</li>
+							</ul>
+						</div>
+						<div id="user_img_icon">
+								<a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;">
+							    <img src="<?= h($prof2['picture']); ?>"/>
+							</a>
+						</div>
+					</div><!--header_signin-->
+				</div>
+			</header>
+		
+		
+		
+		<div id="header2">
+			<div id="header2_wrapper">
+				<div id="header2_nav">
+					<a id="nav_btn_latest" href="index">Latest</a>
+					<a id="nav_btn_help" href="help">Help!</a>
+					<a id="nav_btn_popular" href="popular">Popular</a>
+					<a id="button_example" href="post">POST<i class="fa fa-camera" style="margin-left:3px;"></i></a>
+				</div>
 			</div>
 		</div>
-	</div>
-	</div><!--wrap-top-->
-	
-		<div id="c_contents_wrapper">
-			<div id="contents_right_block">
-					<div class="post_item_container">
-					<div class="post_item_left">
-						<div class="post_item_img_wrapper">
-							<div class="post_item_img">
-								<img src="<?= h($c_contents['picture']); ?>" style="width:100%;"/>
-							</div>
-						</div><!--post_item_img_wrapper-->
-						<div class="post_item_user_info">
-							<div class="post_item_user_img">
-								<div class="post_item_user_img2">
-									<img src="<?= h($prof2['picture']); ?>" style="width:40px; height:40px;">
+		</div><!--wrap-top-->
+		
+			<div id="c_contents_wrapper">
+				<div id="contents_right_block">
+						<div class="post_item_container">
+						<div class="post_item_left">
+							<div class="post_item_img_wrapper">
+								<div class="post_item_img">
+									<img src="<?= h($c_contents['picture']); ?>" style="width:100%;"/>
 								</div>
-							</div>
-							<div class="post_item_user_name">
-								<span><?= h($prof2['name']); ?></span>
-							</div>
-						</div><!--post_item_user_info-->
-						<div class="buy_list_btn_wrapper">
+							</div><!--post_item_img_wrapper-->
+							<div class="post_item_user_info">
+								<div class="post_item_user_img">
+									<div class="post_item_user_img2">
+										<img src="<?= h($prof2['picture']); ?>" style="width:40px; height:40px;">
+									</div>
+								</div>
+								<div class="post_item_user_name">
+									<span><?= h($prof2['name']); ?></span>
+								</div>
+							</div><!--post_item_user_info-->
 							<div class="buy_list_btn_wrapper">
-								<form name="buy_list_btn_form" method="post" action="" class="buy_list_btn_form">			        		
-								<input type="hidden" value="<?= h($c_contents['id']); ?>" name="contents3">
-								<?php
-									$like1 = $dbh->prepare("select id from buy_lists where buy_list_user_id=:me AND buy_list_contents_id=:request");
-									$like1->execute(array(":me"=>$_SESSION['me']['id'],":request"=>$c_contents['id']));
-									$likes1 = $like1->fetch();
-								if(empty($likes1)) {
-								?>
-								<input type="image" id="<?= "i_c". h($c_contents['id']); ?>" src="img/buy_list_btn_before.png" style="border:0;" class="buy_list_btn">
-								<?php } else { ?>
-								<input type="image" id="<?= "i_c". h($c_contents['id']); ?>" src="img/buy_list_btn_after.png" style="border:0;" class="buy_list_btn" style="margin-bottom:3px;">
-								<?php } ?>
-								</form> 
-								<div class="count_wrapper">	
-									<span class="buy_list_count" style="font-family: Viga, sans-serif; color:#737373; font-size:110%;"><i class="fa fa-bookmark" style="font-size:130%;color:#2F99A4;"></i> <span id="<?= "change2". h($c_contents['id']); ?>">100</span></span>
+								<div class="buy_list_btn_wrapper">
+									<form name="buy_list_btn_form" method="post" action="" class="buy_list_btn_form">			        		
+									<input type="hidden" value="<?= h($c_contents['id']); ?>" name="contents3">
+									<?php
+										$like1 = $dbh->prepare("select id from buy_lists where buy_list_user_id=:me AND buy_list_contents_id=:request");
+										$like1->execute(array(":me"=>$_SESSION['me']['id'],":request"=>$c_contents['id']));
+										$likes1 = $like1->fetch();
+									if(empty($likes1)) {
+									?>
+									<input type="image" id="<?= "i_c". h($c_contents['id']); ?>" src="img/buy_list_btn_before.png" style="border:0;" class="buy_list_btn">
+									<?php } else { ?>
+									<input type="image" id="<?= "i_c". h($c_contents['id']); ?>" src="img/buy_list_btn_after.png" style="border:0;" class="buy_list_btn" style="margin-bottom:3px;">
+									<?php } ?>
+									</form> 
+									<div class="count_wrapper">	
+										<span class="buy_list_count" style="font-family: Viga, sans-serif; color:#737373; font-size:110%;"><i class="fa fa-bookmark" style="font-size:130%;color:#2F99A4;"></i> <span id="<?= "change2". h($c_contents['id']); ?>">100</span></span>
+									</div>
 								</div>
 							</div>
-						</div>
-					</div><!--post_item_left-->
-					
-					<div class="post_item_right">
-						<div class="post_item_title">
+						</div><!--post_item_left-->
+						
+						<div class="post_item_right">
+							<div class="post_item_title">
+							<?php
+							
+							$url = $c_contents['url_link'];
+							$title = $c_contents['title'];
+							
+							?>
+								<h2 style="word-break: break-all;"><?= mb_strimwidth("$title", 0, 60, "..."); ?></h2>	
+							</div><!--post_item_title-->
+							<div class="post_item_url_link">
+								<h3><a href="google.com" style="color:#2C5379;"><?= mb_strimwidth("$url", 0, 30, "..."); ?></a></h3>	
+							</div>
+							<div class="post_item_price">
+								<span><i class="fa fa-cny"></i><?= h($c_contents['price']); ?></span>
+							</div>
+							<div class="buy_btn_wrapper">	
+								<button class="buy_btn">Buy</button>	
+							</div>
+							<div class="post_item_social_btn_wrapper">	
+								<img src="img/fb_share_btn2.png" style="float:left margin-right:3px; height:28px;">
+								<img src="img/tw_share_btn2.png" style="float:left margin-right:3px; height:28px;">	
+							</div>
+							<div class="post_item_comment_wrapper">
+								<form method="post" action="" id="comment-form" enctype="multipart/form-data">
+									<input type="hidden" name="c_ajax" value="<?= h($c_contents['id']); ?>">
+									<input type="text" name="comment_text" class="comment_form" id="get_area" placeholder="comment......">
+									<input type="image" value="POST" src="img/post_btn.png" class="item_comment_btn">
+								</form>
+							</div><!--post_item_comment_wrapper-->
 						<?php
 						
-						$url = $c_contents['url_link'];
-						$title = $c_contents['title'];
+							//comment get
+							$comment = $dbh->prepare("SELECT user_id,comment,created FROM comment WHERE contents_id=:c_id;");
+							$comment->execute(array(":c_id"=>$c_contents['id']));
+							
 						
 						?>
-							<h2 style="word-break: break-all;"><?= mb_strimwidth("$title", 0, 60, "..."); ?></h2>	
-						</div><!--post_item_title-->
-						<div class="post_item_url_link">
-							<h3><a href="google.com" style="color:#2C5379;"><?= mb_strimwidth("$url", 0, 30, "..."); ?></a></h3>	
-						</div>
-						<div class="post_item_price">
-							<span><i class="fa fa-cny"></i><?= h($c_contents['price']); ?></span>
-						</div>
-						<div class="buy_btn_wrapper">	
-							<button class="buy_btn">Buy</button>	
-						</div>
-						<div class="post_item_social_btn_wrapper">	
-							<img src="img/fb_share_btn2.png" style="float:left margin-right:3px; height:28px;">
-							<img src="img/tw_share_btn2.png" style="float:left margin-right:3px; height:28px;">	
-						</div>
-						<div class="post_item_comment_wrapper">
-							<form method="post" action="" id="comment-form" enctype="multipart/form-data">
-								<input type="hidden" name="c_ajax" value="<?= h($c_contents['id']); ?>">
-								<input type="text" name="comment_text" class="comment_form" id="get_area" placeholder="comment......">
-								<input type="image" value="POST" src="img/post_btn.png" class="item_comment_btn">
-							</form>
-						</div><!--post_item_comment_wrapper-->
-					<?php
-					
-						//comment get
-						$comment = $dbh->prepare("SELECT user_id,comment,created FROM comment WHERE contents_id=:c_id;");
-						$comment->execute(array(":c_id"=>$c_contents['id']));
+						<?php while($comments = $comment->fetch()) {  ?>
+						<?php
+							$comment_user = $dbh->prepare("SELECT id,picture,name FROM user_data WHERE id=:c_id;");
+							$comment_user->execute(array(":c_id"=>$comments['user_id']));
+							$comment_user1 = $comment_user->fetch();
 						
-					
-					?>
-					<?php while($comments = $comment->fetch()) {  ?>
-					<?php
-						$comment_user = $dbh->prepare("SELECT id,picture,name FROM user_data WHERE id=:c_id;");
-						$comment_user->execute(array(":c_id"=>$comments['user_id']));
-						$comment_user1 = $comment_user->fetch();
-					
-					?>
-						<div class="item_comments_wrapper">
-							<div class="item_comments_container">
-								<div class="comment_user_img" >
-									<img src="<?= h($comment_user1['picture']); ?>" style="width:35px; height:35px;"/>
+						?>
+							<div class="item_comments_wrapper">
+								<div class="item_comments_container">
+									<div class="comment_user_img" >
+										<img src="<?= h($comment_user1['picture']); ?>" style="width:35px; height:35px;"/>
+									</div>
+									<div class="comment_user_name">
+										<span><?= h($comment_user1['name']); ?></span>
+									</div>
+									<div class="comment_user_time">
+										<span><?= h($comments['created']); ?></span>
+									</div>
 								</div>
-								<div class="comment_user_name">
-									<span><?= h($comment_user1['name']); ?></span>
+								<div class="comments_text_wrapper">
+									<p style="word-break: break-all; margint-top:5px;"><?= h($comments['comment']); ?></p>
 								</div>
-								<div class="comment_user_time">
-									<span><?= h($comments['created']); ?></span>
-								</div>
-							</div>
-							<div class="comments_text_wrapper">
-								<p style="word-break: break-all; margint-top:5px;"><?= h($comments['comment']); ?></p>
-							</div>
-						</div><!--item_comments_wrapper-->
-					<?php } ?>
-					</div><!--post_item_right-->
-				</div><!--post_item_container-->
+							</div><!--item_comments_wrapper-->
+						<?php } ?>
+						</div><!--post_item_right-->
+					</div><!--post_item_container-->
+				</div>
 			</div>
-		</div>
-	
-		<div id="wrap-btm">
-		<p id="copyright">Liry</p>
-		</div>
-	</div><!--wrapp-top-->
-</div><!--wrapper-->
+		
+			<div id="wrap-btm">
+			<p id="copyright">Liry</p>
+			</div>
+		</div><!--wrapp-top-->
+	</div><!--wrapper-->
 
-<!--js-->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="js/jquery.wookmark.js"></script>
-<script src="js/jquery.nailthumb.1.1.min.js"></script>
-<script src="js/jquery.imagesloaded.js"></script>
-<script>
-	
-	$("#menu li").hover(function() {
-	$(this).children('ul').show();
-}, function() {
-	$(this).children('ul').hide();
-});
-	
-</script>
-<!--user img icon resize-->
-<script type="text/javascript">
-	$(document).ready(new function() {
-	    var options = {
-	      autoResize: true,
-	      container: $('#main2'), 
-	      offset: 1, 
-	      itemWidth: 200    
-	    };
-	
-	    var handler = $('#tiles2 li');
-	      
-	    handler.wookmark(options); 
+	<!--js-->
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="js/jquery.wookmark.js"></script>
+	<script src="js/jquery.nailthumb.1.1.min.js"></script>
+	<script src="js/jquery.imagesloaded.js"></script>
+	<script>
+		
+		$("#menu li").hover(function() {
+		$(this).children('ul').show();
+	}, function() {
+		$(this).children('ul').hide();
 	});
-</script>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('.nailthumb-container').nailthumb({width:40,height:40,method:'resize',fitDirection:'top'});
-	});
-</script>
-<script>
-	$(function(){
-		$("form.buy_list_btn_form").submit(function(event) {
-			event.preventDefault();
-			var val = $(this).children("input[name='contents3']").val();
-			$.ajax({
-				type: 'POST',
-				url: 'buy_list_btn.php',
-				data: {"contents": val},
-				success: function(data) {
-					var dt = data.split(",");
-					var imgSrc = ($("#i_c" + dt[0]).attr("src") == "img/buy_list_btn_before.png")? "img/buy_list_btn_after.png": "img/buy_list_btn_before.png";
-					$("#i_c" + dt[0]).attr("src", imgSrc);
-					$("span#change2" + dt[0]).text(dt[1]);
-				}
-			});
-			return false;
+		
+	</script>
+	<!--user img icon resize-->
+	<script type="text/javascript">
+		$(document).ready(new function() {
+		    var options = {
+		      autoResize: true,
+		      container: $('#main2'), 
+		      offset: 1, 
+		      itemWidth: 200    
+		    };
+		
+		    var handler = $('#tiles2 li');
+		      
+		    handler.wookmark(options); 
 		});
-	});
-
-</script> 
-<script>
-	$(function(){
-		$("form#comment-form").submit(function(event) {
-			event.preventDefault();
-			var val = $(this).children("input[name='c_ajax']").val();
-			var tiesto = document.getElementById('get_area').value;
-			$.ajax({
-				type: 'POST',
-				url: 'comment.html',
-				data: {"contents": val, 
-				"comments": tiesto},
-				success: function(data) {
-					location.reload();
-				}
-			});
-			return false;
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.nailthumb-container').nailthumb({width:40,height:40,method:'resize',fitDirection:'top'});
 		});
-	});
-</script> 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-51403977-1', 'liry.me');
-  ga('send', 'pageview');
-</script>
+	</script>
+	<script>
+		$(function(){
+			$("form.buy_list_btn_form").submit(function(event) {
+				event.preventDefault();
+				var val = $(this).children("input[name='contents3']").val();
+				$.ajax({
+					type: 'POST',
+					url: 'buy_list_btn.php',
+					data: {"contents": val},
+					success: function(data) {
+						var dt = data.split(",");
+						var imgSrc = ($("#i_c" + dt[0]).attr("src") == "img/buy_list_btn_before.png")? "img/buy_list_btn_after.png": "img/buy_list_btn_before.png";
+						$("#i_c" + dt[0]).attr("src", imgSrc);
+						$("span#change2" + dt[0]).text(dt[1]);
+					}
+				});
+				return false;
+			});
+		});
+	
+	</script> 
+	<script>
+		$(function(){
+			$("form#comment-form").submit(function(event) {
+				event.preventDefault();
+				var val = $(this).children("input[name='c_ajax']").val();
+				var tiesto = document.getElementById('get_area').value;
+				$.ajax({
+					type: 'POST',
+					url: 'comment.html',
+					data: {"contents": val, 
+					"comments": tiesto},
+					success: function(data) {
+						location.reload();
+					}
+				});
+				return false;
+			});
+		});
+	</script> 
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-51403977-1', 'liry.me');
+	  ga('send', 'pageview');
+	</script>
 </body>
 </html>
