@@ -113,31 +113,31 @@
 		function ConvertCurrency($country_code,$price){
 			
 			
-		$usd = json_decode(file_get_contents('http://api.aoikujira.com/kawase/json/usd'));
-		$gbp = json_decode(file_get_contents('http://api.aoikujira.com/kawase/json/gbp'));
-		$eur = json_decode(file_get_contents('http://api.aoikujira.com/kawase/json/eur'));
+			$usd = json_decode(file_get_contents('http://api.aoikujira.com/kawase/json/usd'));
+			$gbp = json_decode(file_get_contents('http://api.aoikujira.com/kawase/json/gbp'));
+			$eur = json_decode(file_get_contents('http://api.aoikujira.com/kawase/json/eur'));
+			
+			$arr_usd = (array)$usd;
+			$arr_gbp = (array)$gbp;
+			$arr_eur = (array)$eur;
 		
-		$arr_usd = (array)$usd;
-		$arr_gbp = (array)$gbp;
-		$arr_eur = (array)$eur;
-	
-		switch ($country_code) {
-		  case 1:
-		    $price_result = $price;
-		    break;
-		  case 2:
-		    $price_result = $arr_usd['JPY'] * $price;
-		    break;
-		   case 3:
-		    $price_result = $arr_gbp['JPY'] * $price;
-		    break;
-		  case 4:
-		    $price_result = $arr_eur['JPY'] * $price;
-		    break;
-		}
-		
-		
-		return $price_result;	
+			switch ($country_code) {
+			  case 1:
+			    $result = $price;
+			    break;
+			  case 2:
+			    $result = $arr_usd['JPY'] * $price;
+			    break;
+			   case 3:
+			    $result = $arr_gbp['JPY'] * $price;
+			    break;
+			  case 4:
+			    $result = $arr_eur['JPY'] * $price;
+			    break;
+			}
+			
+			
+			return $result;	
 			
 		}
 			
