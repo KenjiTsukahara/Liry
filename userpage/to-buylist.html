@@ -1,5 +1,5 @@
 <?php 
- 	include '../common.php';
+ 	include '../php/common.php';
 
 	if (empty($_SESSION['me'])) {
 	    header('Location: '.SITE_URL.'index.html');
@@ -79,7 +79,7 @@
 					</div>
 				
 					<div id="nav_search">
-						<form name="searchform2" id="searchform2" method="get" action="search_q">  
+						<form name="searchform2" id="searchform2" method="get" action="search">  
 							<input name="search_word" id="keywords2" value="" type="text" placeholder="Search" style="color:#333333;"/>  
 							<input type="image" src="img/btn2.gif" alt="検索" id="searchBtn2" />  
 						</form>
@@ -94,7 +94,7 @@
 									<ul>
 									  <li><a href="want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
 									  <li><a href="../mypage_edit" class="menu_li">Setting</a></li>
-									  <li><a href="../logout.php" class="menu_li">Logout</a></li>
+									  <li><a href="../php/logout.php" class="menu_li">Logout</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -181,7 +181,7 @@
 									</div><!--contents_opacity_wrapper-->
 									<div class="title_status">
 									<?php $title = $all_c['title']; ?>
-										<h2 class="title"><a href="../c_contents?id=<?= h($all_c['id']); ?>"><?= mb_strimwidth("$title", 0, 47, "..."); ?></a></h2>
+										<h2 class="title"><a href="../contents_detail?id=<?= h($all_c['id']); ?>"><?= mb_strimwidth("$title", 0, 47, "..."); ?></a></h2>
 									</div>
 									<div class="buy_item_wrapper_left">
 										<div class="find_want_status">
@@ -262,11 +262,11 @@
 				var val = $(this).children("input[name='contents2']").val();
 				$.ajax({
 					type: 'POST',
-					url: 'like.php',
+					url: '../php/like.php',
 					data: {"contents": val},
 					success: function(data) {
 						var dt = data.split(",");
-						var imgSrc = ($("#" + dt[0]).attr("src") == "img/want_btn_before.png")? "img/want_btn_after.png": "img/want_btn_before.png";
+						var imgSrc = ($("#" + dt[0]).attr("src") == "../img/want_btn_before.png")? "../img/want_btn_after.png": "../img/want_btn_before.png";
 						$("#" + dt[0]).attr("src", imgSrc);
 						$("span#change" + dt[0]).text(dt[1]);
 					}
@@ -286,11 +286,11 @@
 				
 			   $.ajax({
 				    type: 'POST',
-				    url: 'buy_list_btn.php',
+				    url: '../php/buy_list_btn.php',
 				    data: {"contents": val},
 				    success: function(data) {
 					   var dt = data.split(",");
-					   var imgSrc = ($("#i_c" + dt[0]).attr("src") == "img/buylist_btn_hover_before.png")? "img/buylist_btn_hover_after.png": "img/buylist_btn_hover_before.png";
+					   var imgSrc = ($("#i_c" + dt[0]).attr("src") == "../img/buylist_btn_hover_before.png")? "../img/buylist_btn_hover_after.png": "../img/buylist_btn_hover_before.png";
 					   $("#i_c" + dt[0]).attr("src", imgSrc);
 					   $("span#change2" + dt[0]).text(dt[1]);
 				   

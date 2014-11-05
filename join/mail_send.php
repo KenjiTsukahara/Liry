@@ -9,7 +9,7 @@
 	$subject = $_POST['name'] . "/" . $_POST['mail'];
 	$body = $_POST['detail'];
 	
-	if(mb_send_mail("liryme0302@gmail.com",$subject,$body)){
+	if(mb_send_mail("",$subject,$body)){
 	   echo "メール送信に成功しました。5秒後にTOPへ戻ります。";
 	}else{
 	   echo "メール送信に失敗しました。最初からやり直して下さい。5秒後にTOPへ戻ります。";

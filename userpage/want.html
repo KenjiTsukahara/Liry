@@ -1,5 +1,5 @@
 <?php 
-	include '../common.php';
+	include '../php/common.php';
 
 	if (empty($_SESSION['me'])) {
 		header('Location: '.SITE_URL.'index.html');
@@ -73,7 +73,7 @@ order by created desc;");
 					<a href="../index" id="logo_link"><img src="img/LIRY_LOGO2.png" style="height:48px;"/></a>
 					</div>
 					<div id="nav_search">
-						<form name="searchform2" id="searchform2" method="get" action="search_q">  
+						<form name="searchform2" id="searchform2" method="get" action="search">  
 							<input name="search_word" id="keywords2" value="" type="text" placeholder="Search" style="color:#333333;"/>  
 							<input type="image" src="img/btn2.gif" alt="検索" id="searchBtn2" />  
 						</form>
@@ -87,7 +87,7 @@ order by created desc;");
 								  <ul>
 									  <li><a href="want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
 									  <li><a href="../mypage_edit" class="menu_li">Setting</a></li>
-									  <li><a href="../logout.php" class="menu_li">Logout</a></li>
+									  <li><a href="../php/logout.php" class="menu_li">Logout</a></li>
 								  </ul>
 								</li>
 							</ul>
@@ -241,11 +241,11 @@ order by created desc;");
 		var val = $(this).children("input[name='contents2']").val();
 		   $.ajax({
 		    type: 'POST',
-		    url: 'like.php',
+		    url: '../php/like.php',
 		    data: {"contents": val},
 		    success: function(data) {
 		    var dt = data.split(",");
-		   var imgSrc = ($("#" + dt[0]).attr("src") == "img/want_btn_before.png")? "img/want_btn_after.png": "img/want_btn_before.png";
+		   var imgSrc = ($("#" + dt[0]).attr("src") == "../img/want_btn_before.png")? "../img/want_btn_after.png": "../img/want_btn_before.png";
 		   $("#" + dt[0]).attr("src", imgSrc);
 		   $("span#change" + dt[0]).text(dt[1]);
 		    }

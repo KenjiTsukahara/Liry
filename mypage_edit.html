@@ -1,6 +1,6 @@
 <?php 
 
-	include 'common.php';
+	include 'php/common.php';
 
 	if(empty($_SESSION['me']['id'])) {
 		
@@ -66,7 +66,7 @@
 			</div>
 			
 		<div id="nav_search">
-			<form name="searchform2" id="searchform2" method="get" action="search_q">  
+			<form name="searchform2" id="searchform2" method="get" action="search">  
 				<input name="search_word" id="keywords2" value="" type="text" placeholder="Search" style="color:#333333;"/>  
 				<input type="image" src="img/btn2.gif" alt="検索" id="searchBtn2" />  
 			</form>
@@ -81,7 +81,7 @@
 					  <ul>
 						  <li><a href="userpage/want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
 						  <li><a href="mypage_edit" class="menu_li">Setting</a></li>
-						  <li><a href="logout.php" class="menu_li">Logout</a></li>
+						  <li><a href="php/logout.php" class="menu_li">Logout</a></li>
 					  </ul>
 					</li>
 				</ul>
@@ -114,7 +114,7 @@
 	</div>
 	<div id="edit_wrapper">
 		<div id="edit_form">
-			<form action="request_edit.php" method="post" enctype="multipart/form-data" name="postin" />
+			<form action="php/request_edit.php" method="post" enctype="multipart/form-data" name="postin" />
 				<div id="left_wrapper">
 					<p class="title" id="img">Profile Image</p>
 					<div id="prev_img_wrapper">
