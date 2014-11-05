@@ -110,7 +110,7 @@
 							<a href="#"><i class="fa fa-cogs" style="font-size:150%;">
 							</i></a>
 							  <ul>
-								  <li><a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
+								  <li><a href="userpage/want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
 								  <li><a href="mypage_edit" class="menu_li">Setting</a></li>
 								  <li><a href="logout.php" class="menu_li">Logout</a></li>
 							  </ul>
@@ -119,7 +119,7 @@
 					</div>
 				
 					<div id="user_img_icon">
-						<a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;">
+						<a href="userpage/want?id=<?= h($_SESSION['me']['id']); ?>"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;">
 						    <img src="<?= h($prof['picture']); ?>"/>
 						</div></a>
 					</div>
@@ -174,10 +174,10 @@
 					</div><!--contents_opacity_wrapper-->
 					<div id="contents_user_info">
 						<div id="post_user_img">
-							<a href="userpage_want?id=<?= h($post_user['id']); ?>"><img src="<?= h($post_user['picture']); ?>"  style="width:40px; height:40px;"/></a>
+							<a href="userpage/want?id=<?= h($post_user['id']); ?>"><img src="<?= h($post_user['picture']); ?>"  style="width:40px; height:40px;"/></a>
 						</div>
 						<div id="post_user_name">
-							<a href="userpage_want?id=<?= h($post_user['id']); ?>"><span id="post_user_name1"><?= h($post_user['name']); ?></span></a>
+							<a href="userpage/want?id=<?= h($post_user['id']); ?>"><span id="post_user_name1"><?= h($post_user['name']); ?></span></a>
 						</div><!--post_user_name-->
 					</div><!--contents_user_info-->
 					<div id="contents_info">

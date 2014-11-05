@@ -73,7 +73,7 @@
 									<li style="margin-top:5px; margin-left:5px;">
 										<a href="#"><i class="fa fa-cogs" style="font-size:150%;"></i></a>
 								  <ul>
-									  <li><a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
+									  <li><a href="userpage/want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
 									  <li><a href="mypage_edit" class="menu_li">Setting</a></li>
 									  <li><a href="logout.php" class="menu_li">Logout</a></li>
 								  </ul>
@@ -82,7 +82,7 @@
 							</div>
 						
 							<div id="user_img_icon">
-								<a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;"><img src="<?= h($prof['picture']); ?>"/></a>
+								<a href="userpage/want?id=<?= h($_SESSION['me']['id']); ?>"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;"><img src="<?= h($prof['picture']); ?>"/></a>
 							</div>
 						</div><!--header_signin-->
 					</div>
@@ -136,7 +136,7 @@
 										$stmt->execute(array(":request"=>$latest_c[$num]['user_id']));
 										$prof = $stmt->fetch();
 										?>   
-										<a href="userpage_want?id=<?= h($prof['id']); ?>">
+										<a href="userpage/want?id=<?= h($prof['id']); ?>">
 											<div class="user_data">
 												<div class="nailthum_wrapper">  
 													<img src="<?= h($prof['picture']); ?>"style='width:23px; height:23px;'/>
@@ -256,7 +256,7 @@
 				function appendFunc() {	
 							
 					var tagText = "";
-					tagText = "<li><a href='contents?id=" + data2[counter]['id'] + "'><div class='contents_opacity_wrapper'><div class='want_btn_wrapper'><form name='like' method='post' action='' class='want_btn2 like_form'><input type='hidden' value='" + data2[counter]['id'] + "' name='contents2'><?php $like = $dbh->prepare('select id from likes where like_user_id=:me AND like_contents_id=:request');$like->execute(array(':me'=>$_SESSION['me']['id'],':request'=>" + data2[counter]['id'] + "));$likes = $like->fetch();if(empty($likes)) { ?><input type='image' id=" + data2[counter]['id'] + " src='img/want_btn_before.png' style='border:0;'><?php } else { ?><input type='image' id=" + data2[counter]['id'] + " src='img/want_btn_after.png' style='border:0;'><?php } ?></form></div><img src='" + data2[counter]['picture'] + "' style='width:250px;height:" + data_info[counter] + "px; potision:relateve;' class='item_imgs scroll'><div class='help_type'><span class='help_type_p'>"+ data2[counter]['type'] +"</span></div></div><div class='find_want_status'><span class='find_status'><span class='icon_high_set'><i class='icon-crown' style='color:#bdc3c7;font-size:120%;'></i></span>"+ data2[counter]['finds'] +"</span><span class='want_status'><i class='icon-heart-1' style='color:#bdc3c7'></i><span id=2>"+ data2[counter]['likes'] +"</span></span></div></a><a href='userpage_want?id=" + data2[counter]['user_id'] + "'><div class='user_data'><div class='nailthum_wrapper'><img src='" + data2[counter]['user_picture'] + "' style='width:23px; height:23px;'/></div><div id='user_name_wrapper'><span class='contents_user_name'>" + data2[counter]['user_name'] + "</span></div></div></a></li>";
+					tagText = "<li><a href='contents?id=" + data2[counter]['id'] + "'><div class='contents_opacity_wrapper'><div class='want_btn_wrapper'><form name='like' method='post' action='' class='want_btn2 like_form'><input type='hidden' value='" + data2[counter]['id'] + "' name='contents2'><?php $like = $dbh->prepare('select id from likes where like_user_id=:me AND like_contents_id=:request');$like->execute(array(':me'=>$_SESSION['me']['id'],':request'=>" + data2[counter]['id'] + "));$likes = $like->fetch();if(empty($likes)) { ?><input type='image' id=" + data2[counter]['id'] + " src='img/want_btn_before.png' style='border:0;'><?php } else { ?><input type='image' id=" + data2[counter]['id'] + " src='img/want_btn_after.png' style='border:0;'><?php } ?></form></div><img src='" + data2[counter]['picture'] + "' style='width:250px;height:" + data_info[counter] + "px; potision:relateve;' class='item_imgs scroll'><div class='help_type'><span class='help_type_p'>"+ data2[counter]['type'] +"</span></div></div><div class='find_want_status'><span class='find_status'><span class='icon_high_set'><i class='icon-crown' style='color:#bdc3c7;font-size:120%;'></i></span>"+ data2[counter]['finds'] +"</span><span class='want_status'><i class='icon-heart-1' style='color:#bdc3c7'></i><span id=2>"+ data2[counter]['likes'] +"</span></span></div></a><a href='userpage/want?id=" + data2[counter]['user_id'] + "'><div class='user_data'><div class='nailthum_wrapper'><img src='" + data2[counter]['user_picture'] + "' style='width:23px; height:23px;'/></div><div id='user_name_wrapper'><span class='contents_user_name'>" + data2[counter]['user_name'] + "</span></div></div></a></li>";
 					
 					$("#tiles").append(tagText);
 					counter++;

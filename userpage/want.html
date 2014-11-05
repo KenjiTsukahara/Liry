@@ -1,5 +1,5 @@
 <?php 
-	include 'common.php';
+	include '../common.php';
 
 	if (empty($_SESSION['me'])) {
 		header('Location: '.SITE_URL.'index.html');
@@ -40,15 +40,15 @@ order by created desc;");
 <meta name="keywords" content="">
 
 <!--Require Stylesheet-->
-<link rel="shortcut icon" type="image/ico" href="img/favicon.ico" />
-<link rel="stylesheet" href="css/common.css">
-<link rel="stylesheet" href="css/top.css">
-<link rel="stylesheet" href="css/mypage_want.css">
-<link rel="stylesheet" href="js/jquery.nailthumb.1.1.min.css">
-<link rel="stylesheet" href="css/square_thum.css">
+<link rel="shortcut icon" type="image/ico" href="../img/favicon.ico" />
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/top.css">
+<link rel="stylesheet" href="../css/mypage_want.css">
+<link rel="stylesheet" href="../js/jquery.nailthumb.1.1.min.css">
+<link rel="stylesheet" href="../css/square_thum.css">
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-<link rel="stylesheet" href="css/font-awesome.css">
-<link href="js/jquery.minimalect.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" href="../css/font-awesome.css">
+<link href="../js/jquery.minimalect.css" type="text/css" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Kite+One' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Sofia' rel='stylesheet' type='text/css'>
@@ -56,9 +56,9 @@ order by created desc;");
 <link href='http://fonts.googleapis.com/css?family=Flamenco' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Tienne:700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Tauri' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="css/fontello.css">
-<link rel="stylesheet" href="css/animation.css">
-<link rel="stylesheet" href="css/fontello-ie7.css">
+<link rel="stylesheet" href="../css/fontello.css">
+<link rel="stylesheet" href="../css/animation.css">
+<link rel="stylesheet" href="../css/fontello-ie7.css">
 
 
 </head>
@@ -70,7 +70,7 @@ order by created desc;");
 			<header>
 				<div id="header">
 					<div id="top_logo">
-					<a href="index" id="logo_link"><img src="img/LIRY_LOGO2.png" style="height:48px;"/></a>
+					<a href="../index" id="logo_link"><img src="img/LIRY_LOGO2.png" style="height:48px;"/></a>
 					</div>
 					<div id="nav_search">
 						<form name="searchform2" id="searchform2" method="get" action="search_q">  
@@ -85,15 +85,15 @@ order by created desc;");
 									<a href="#"><i class="fa fa-cogs" style="font-size:150%;">
 								</i></a>
 								  <ul>
-									  <li><a href="userpage_want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
-									  <li><a href="mypage_edit" class="menu_li">Setting</a></li>
-									  <li><a href="logout.php" class="menu_li">Logout</a></li>
+									  <li><a href="want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
+									  <li><a href="../mypage_edit" class="menu_li">Setting</a></li>
+									  <li><a href="../logout.php" class="menu_li">Logout</a></li>
 								  </ul>
 								</li>
 							</ul>
 						</div>
 						<div id="user_img_icon">
-							<a href="mypage_post"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;">
+							<a href="post"><div class="nailthumb-container square-thumb" style="border:2px solid #333333;">
 							    <img src="<?= h($prof['picture']); ?>"/>
 							</a>
 						</div>
@@ -105,10 +105,10 @@ order by created desc;");
 			<div id="header2">
 				<div id="header2_wrapper">
 					<div id="header2_nav">
-						<a id="nav_btn_latest" href="index">Latest</a>
-						<a id="nav_btn_help" href="help">Help!</a>
-						<a id="nav_btn_popular" href="popular">Popular</a>
-						<a id="button_example" href="post">POST<i class="fa fa-camera" style="margin-left:3px;"></i></a>
+						<a id="nav_btn_latest" href="../index">Latest</a>
+						<a id="nav_btn_help" href="../help">Help!</a>
+						<a id="nav_btn_popular" href="../popular">Popular</a>
+						<a id="button_example" href="../post">POST<i class="fa fa-camera" style="margin-left:3px;"></i></a>
 					</div>
 				</div>
 			</div>
@@ -129,8 +129,8 @@ order by created desc;");
 					<div id="my_items_nav_wrapper">
 						<div id="my_items_nav">
 							<a id="profile_button_want" href="">Want</a>
-							<a id="profile_button_post" href="userpage_post?id=<?= h($r_prof['id']); ?>">Post</a>
-							<a id="profile_button_tobuy-list" href="userpage_to-buylist?id=<?= h($r_prof['id']); ?>">To-Buy List</a>
+							<a id="profile_button_post" href="post?id=<?= h($r_prof['id']); ?>">Post</a>
+							<a id="profile_button_tobuy-list" href="to-buylist?id=<?= h($r_prof['id']); ?>">To-Buy List</a>
 						</div>
 					</div><!--my_items_nav_wrapper-->
 				</div><!--profile_wrapper1-->
@@ -163,7 +163,7 @@ order by created desc;");
 												<?php } ?>
 											</form>
 									 </div>
-								     <a href="contents?id=<?= h($all_c['id'])?>"><img src="<?= h($all_c['picture']); ?>" style="width:100%; potision:relateve;" class="item_imgs"></a>
+								     <a href="../contents?id=<?= h($all_c['id'])?>"><img src="<?= h($all_c['picture']); ?>" style="width:100%; potision:relateve;" class="item_imgs"></a>
 								    <div class="help_type"><span class="help_type_p"><?= h($all_c['type']); ?></span></div>
 								    </div><!--contents_opacity_wrapper-->
 								    <div class="find_want_status">
