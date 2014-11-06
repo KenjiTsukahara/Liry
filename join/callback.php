@@ -110,7 +110,7 @@ if (! isset($_GET['oauth_verifier'])) {
         );
         $stmt->execute($params);
         $_SESSION['tw'] = 1;
-		header('Location: ../login_cookie.php');    
+		header('Location: ../php/login_cookie.php');    
     }
 
     

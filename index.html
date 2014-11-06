@@ -1,5 +1,5 @@
 <?php 
-	include 'common.php';
+	include 'php/common.php';
 	if (empty($_SESSION['me'])) {
 	     header("Location: http://www.liry.me/join/index.html");
 	    exit;
@@ -78,7 +78,7 @@
 								  <ul>
 									  <li><a href="userpage/want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
 									  <li><a href="mypage_edit" class="menu_li">Setting</a></li>
-									  <li><a href="logout.php" class="menu_li">Logout</a></li>
+									  <li><a href="php/logout.php" class="menu_li">Logout</a></li>
 								  </ul>
 								</li>
 							</ul>
@@ -196,7 +196,7 @@
 			$(document).ready(function() {
 				$.ajax({
 					type:"POST",
-					url:"json.php",
+					url:"php/json.php",
 					data: {"latest": true},
 					success:function(msg)
 					{
@@ -268,7 +268,7 @@
 			var val = $(this).children("input[name='contents2']").val();
 			   $.ajax({
 			    type: 'POST',
-			    url: 'like.php',
+			    url: 'php/like.php',
 			    data: {"contents": val},
 			    success: function(data) {
 			    var dt = data.split(",");

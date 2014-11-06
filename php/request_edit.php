@@ -1,6 +1,6 @@
 <?php
 
-	include 'common.php';
+	include 'php/common.php';
 
 	//judge error
 	if(!empty($_POST['post'])) {

@@ -1,6 +1,6 @@
 <?php
 
-	include 'common.php';
+	include 'php/common.php';
 	if (empty($_SESSION['me'])) {
 		header('Location: '.SITE_URL.'index.html');
 		exit;

@@ -87,7 +87,7 @@
 	        ":id"=>$_SESSION['me']['id']
 	        );
 	        $stmt->execute($params);
-	        header('Location: ../login_cookie.php');
+	        header('Location: ../php/login_cookie.php');
 	    }
 	    
 	

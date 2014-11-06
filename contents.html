@@ -1,6 +1,6 @@
 <?php 
 	include 'php/common.php';
-	include 'function.php'
+	include 'php/function.php'
 	
 	if (empty($_SESSION['me'])) {
 	
@@ -21,14 +21,14 @@
     $prof = $stmt->fetch();
         
     //contents_q get
-    $stmt3 = $dbh->prepare("select id, picture, type, caption, category, created, likes, user_id from contents_q where id=:request");
-    $stmt3->execute(array(":request"=>$_REQUEST['id']));
-    $contents_q = $stmt3->fetch();
+    $stmt = $dbh->prepare("select id, picture, type, caption, category, created, likes, user_id from contents_q where id=:request");
+    $stmt->execute(array(":request"=>$_REQUEST['id']));
+    $contents_q = $stmt->fetch();
     
     
     //contents_f get
-    $stmt2 = $dbh->prepare("select id, user_id, title, price, picture, url_link, buylist_count, contents_id, created from contents_f where contents_id=:request");
-    $stmt2->execute(array(":request"=>$contents_q['id']));
+    $stmt = $dbh->prepare("select id, user_id, title, price, picture, url_link, buylist_count, contents_id, created from contents_f where contents_id=:request");
+    $stmt->execute(array(":request"=>$contents_q['id']));
     
     
     //contents_q get
@@ -148,9 +148,9 @@
 					</div>
 				<?php
 					//contnets_q user get
-					$stmt3 = $dbh->prepare("select id,picture,name from user_data where id=:request");
-					$stmt3->execute(array(":request"=>$contents_q['user_id']));
-					$post_user = $stmt3->fetch();
+					$stmt = $dbh->prepare("select id,picture,name from user_data where id=:request");
+					$stmt->execute(array(":request"=>$contents_q['user_id']));
+					$post_user = $stmt->fetch();
 				?>
 					<div class="contents_opacity_wrapper2">
 						<div class="want_btn_wrapper2">
@@ -217,7 +217,7 @@
 						</div>
 					</div>
 					<div id="post_items_wrapper">
-					<?php while($contents_f = $stmt2->fetch()) { ?>
+					<?php while($contents_f = $stmt->fetch()) { ?>
 					<?php 
 					$user_data = $dbh->prepare("select id, picture, name from user_data where id=:request");
 					$user_data->execute(array(":request"=>$contents_f['user_id']));

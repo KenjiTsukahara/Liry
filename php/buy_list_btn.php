@@ -1,6 +1,6 @@
 <?php
 
-	include 'common.php';
+	include 'php/common.php';
 
 	if (empty($_SESSION['me'])) {
 		header('Location: '.SITE_URL.'index.html');
@@ -43,8 +43,8 @@
 					    $stmt = $dbh->prepare("UPDATE contents_q SET buy_list_counts=buy_list_counts+1 WHERE id=:request");
 					    $stmt->execute(array(":request"=>$getids['contents_id']));
 					        
-					    $stmt2 = $dbh->prepare("UPDATE contents_f SET buylist_count=buylist_count+1 WHERE id=:request");
-					    $stmt2->execute(array(":request"=>$_POST['contents']));
+					    $stmt = $dbh->prepare("UPDATE contents_f SET buylist_count=buylist_count+1 WHERE id=:request");
+					    $stmt->execute(array(":request"=>$_POST['contents']));
 					    
 					    
 			        
@@ -60,8 +60,8 @@
 				    $stmt = $dbh->prepare("UPDATE contents_q SET buy_list_counts=buy_list_counts-1 WHERE id=:request");
 				    $stmt->execute(array(":request"=>$_POST['contents']));
 				        
-				    $stmt2 = $dbh->prepare("UPDATE contents_f SET buylist_count=buylist_count-1 WHERE id=:request");
-				    $stmt2->execute(array(":request"=>$_POST['contents']));
+				    $stmt = $dbh->prepare("UPDATE contents_f SET buylist_count=buylist_count-1 WHERE id=:request");
+				    $stmt->execute(array(":request"=>$_POST['contents']));
 			        
 			        
 			 }

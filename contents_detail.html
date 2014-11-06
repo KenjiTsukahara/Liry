@@ -1,5 +1,5 @@
 <?php 
-	include 'common.php';
+	include 'php/common.php';
     
 	if(empty($_REQUEST['id'])) {
 	
@@ -15,17 +15,17 @@
     $prof = $stmt->fetch();
     
     //contents_f get
-    $stmt2 = $dbh->prepare("select id, user_id, title, price, picture, url_link, buylist_count, contents_id, created from contents_f where id=:request");
-    $stmt2->execute(array(":request"=>$_REQUEST['id']));
-    $c_contents = $stmt2->fetch();
+    $stmt = $dbh->prepare("select id, user_id, title, price, picture, url_link, buylist_count, contents_id, created from contents_f where id=:request");
+    $stmt->execute(array(":request"=>$_REQUEST['id']));
+    $c_contents = $stmt->fetch();
     
     $stmt = $dbh->prepare("select id,name,picture from user_data where id=:request");
     $stmt->execute(array(":request"=>$c_contents['user_id']));
     $prof2 = $stmt->fetch();
     
-    $buy_list = $dbh->prepare("SELECT COUNT(id) AS CNT FROM buy_lists WHERE buy_list_contents_id=:c_id;");
-    $buy_list->execute(array(":c_id"=>$c_contents['id']));
-    $buy_list1 = $buy_list->fetchColumn();	
+    $stmt = $dbh->prepare("SELECT COUNT(id) AS CNT FROM buy_lists WHERE buy_list_contents_id=:c_id;");
+    $stmt->execute(array(":c_id"=>$c_contents['id']));
+    $buy_list1 = $stmt->fetchColumn();	
     
 	
 
@@ -88,7 +88,7 @@
 									  <ul>
 										  <li><a href="userpage/want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
 										  <li><a href="mypage_edit" class="menu_li">Setting</a></li>
-										  <li><a href="logout.php" class="menu_li">Logout</a></li>
+										  <li><a href="php/logout.php" class="menu_li">Logout</a></li>
 									  </ul>
 								</li>
 							</ul>
@@ -271,7 +271,7 @@
 				var val = $(this).children("input[name='contents3']").val();
 				$.ajax({
 					type: 'POST',
-					url: 'buy_list_btn.php',
+					url: 'php/buy_list_btn.php',
 					data: {"contents": val},
 					success: function(data) {
 						var dt = data.split(",");

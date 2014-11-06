@@ -1,5 +1,5 @@
 <?php 
-	include 'common.php';
+	include 'php/common.php';
 
 if (empty($_SESSION['me'])) {
     header('Location: '.SITE_URL.'index.html');
@@ -106,7 +106,7 @@ if (empty($_SESSION['me'])) {
 								  <ul>
 									  <li><a href="userpage/want?id=<?= h($_SESSION['me']['id']); ?>" class="menu_li">Mypage</a></li>
 									  <li><a href="mypage_edit" class="menu_li">Setting</a></li>
-									  <li><a href="logout.php" class="menu_li">Logout</a></li>
+									  <li><a href="php/logout.php" class="menu_li">Logout</a></li>
 								  </ul>
 								</li>
 							</ul>
@@ -178,9 +178,9 @@ if (empty($_SESSION['me'])) {
 										</div>
 									    
 									    <?php   
-										$stmt2 = $dbh->prepare("select picture, name, prof from user_data where id=:request");
-									    $stmt2->execute(array(":request"=>$all_c['user_id']));
-									    $prof2 = $stmt2->fetch();  
+										$stmt = $dbh->prepare("select picture, name, prof from user_data where id=:request");
+									    $stmt->execute(array(":request"=>$all_c['user_id']));
+									    $prof2 = $stmt->fetch();  
 									    ?>
 									    
 										<div class="user_data">
@@ -253,7 +253,7 @@ if (empty($_SESSION['me'])) {
 				var val = $(this).children("input[name='contents2']").val();
 				$.ajax({
 					type: 'POST',
-					url: 'like.php',
+					url: 'php/like.php',
 					data: {"contents": val},
 					success: function(data) {
 						var dt = data.split(",");
@@ -274,7 +274,7 @@ if (empty($_SESSION['me'])) {
 				var val = $(this).children("input[name='contents3']").val();
 					$.ajax({
 						type: 'POST',
-						url: 'buy_list_btn.php',
+						url: 'php/buy_list_btn.php',
 						data: {"contents": val},
 						success: function(data) {
 							var dt = data.split(",");
